@@ -1,0 +1,4602 @@
+html {
+    scroll-behavior: smooth; /* For basic smooth scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body {
+    font-family: Arial, sans-serif; 
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    max-width: 100vw; /* Ensure body does not exceed viewport width */
+}
+
+/* Header styles */
+header {
+    background-color: black;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 0 auto; /* Center the header */
+    width: 100%; /* Increase the width for larger screens */
+    max-width: 1500px; /* Set a max width for larger screens */
+    position: static; /* Change to static to make the header scroll with content */
+    height: auto; /* Adjust height to fit content */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid white;
+    border-radius: 10px;
+    pointer-events: none;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    z-index: -1;
+}
+/* Mobile Styles */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 10px; /* Reduce padding for smaller screens */
+        width: 100%; /* Adjust width for mobile devices */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 5px; /* Further reduce padding for very small screens */
+        width: 100%; /* Use full width for very small screens */
+    }
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* WhatsApp icon styles */
+.whatsapp {
+    position: absolute;
+    left: 80%; /* Shifts the icon 40% to the left from its original position */
+    transform: scale(1.9); /* Increases the scale of the icon */
+}
+
+.whatsapp a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+}
+
+.whatsapp-icon {
+    width: 54px;
+    height: 28px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+
+/* Main content area */
+main {
+    padding: 20px;
+    min-height: 600vh;
+}
+
+/* Background image container */
+.bg-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/without-logo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    height: 133%; /* Increase height to 133% */
+}
+
+/* Overlay on the background image */
+.bg-image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.1; /* Reduced opacity for better contrast */
+    z-index: 1;
+}
+/* Style for the fixed rotated arrow container */
+.rotated-arrow-container {
+    position: relative; /* Keep the arrow fixed in its position */
+    top: 30%; /* Position the arrow 30% from the top of the viewport */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally considering the width of the arrow */
+    z-index: 1000; /* Ensure it is above other elements */
+}
+
+/* Style for the rotated arrow image */
+.rotated-arrow {
+    width: 50px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    transform: rotate(45deg); /* Rotate arrow by 30 degrees */
+    transition: transform 0.3s ease; /* Smooth rotation on hover */
+}
+
+/* Optional: Rotate arrow more on hover */
+.rotated-arrow-link:hover .rotated-arrow {
+    transform: rotate(45deg); /* Change rotation angle on hover */
+}
+
+/* Overlay image container */
+.overlay-image-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 2;
+    transition: transform 1s ease, box-shadow 1s ease;
+}
+
+.overlay-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    opacity: 1;
+    border: none;
+    box-shadow: none;
+}
+
+.overlay-image-container:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* WhatsApp icon styles */
+.whatsapp {
+    position: absolute;
+    right: 20px;
+}
+
+.whatsapp a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+}
+
+.whatsapp-icon {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+/* WhatsApp Chat Button Container */
+/* WhatsApp Chat Button Container */
+.whatsapp-chat-container {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom */
+    left: 20px;   /* Distance from the left */
+    z-index: 1000; /* Ensure it is above other elements */
+}
+
+/* WhatsApp Chat Button */
+.whatsapp-chat-button {
+    display: flex;
+    align-items: center;
+    background-color: #25D366; /* WhatsApp green color */
+    color: white;
+    padding: 12px 20px; /* Increased padding for a more rounded look */
+    border-radius: 30px; /* Fully rounded button */
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly larger shadow for a 3D effect */
+    font-family: 'Futura', sans-serif; /* Use Futura font */
+    font-weight: bold; /* Use bold weight */
+    font-size: 16px; /* Adjust size as needed */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.whatsapp-chat-button:hover {
+    background-color: #128C7E; /* Darker WhatsApp green for hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Increased shadow on hover */
+}
+
+/* WhatsApp Icon */
+.whatsapp-chat-icon {
+    width: 30px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 12px; /* Space between icon and text */
+}
+
+/* WhatsApp Text */
+.whatsapp-chat-text {
+    font-size: 16px; /* Adjust size as needed */
+    font-weight: bold;
+}
+
+/* Main content area */
+main {
+    padding: 20px;
+    min-height: 50vh;
+}
+
+/* Background image container */
+.bg-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/without-logo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    height: 133%; /* Increase height to 133% */
+}
+
+/* Overlay on the background image */
+.bg-image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.1; /* Reduced opacity for better contrast */
+    z-index: 1;
+}
+
+/* Overlay image container */
+.overlay-image-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 2;
+    transition: transform 1s ease, box-shadow 1s ease;
+}
+
+.overlay-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    opacity: 1;
+    border: none;
+    box-shadow: none;
+}
+
+.overlay-image-container:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Bottom image container */
+.bottom-image-container {
+    position: absolute;
+    top: 80%;
+    left: 0;
+    right: 0;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.bottom-image-container img {
+    width: 100%;
+    height: 1200px;
+}
+
+/* Bottom image container 2 */
+.bottom-image-container-2 {
+    position: absolute;
+    top: calc(80% + 650px + 0%); /* Move down by an additional 50% */
+    left: 0;
+    right: 0;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3; /* Ensure this is above the video */
+    filter: contrast(170%);
+}
+
+.bottom-image-container-2 img {
+    width: 100%;
+    height: 500px;
+    opacity: 1; /* Ensure full opacity */
+}
+
+/* Video container */
+.video-container {
+    position: absolute;
+    top: calc(80% + 1150px - 1100px); /* Move up by 30% of 1150px, which is 345px */
+    left: -85%; /* Shift the container left by 50% of its width */
+    width: 270%; /* Ensure the container width fits the page */
+    height: 307.42%;
+    opacity: 0.8;
+    z-index: 1; /* Ensure this is below the image containers */
+    display: flex;
+    justify-content: center; /* Center the video horizontally within the container */
+}
+
+.video-container video {
+    width: 100%; /* Ensure the video fits the width of the container */
+    height: auto; /* Maintain aspect ratio */
+    transform: scale(0.4); /* Scale down by 50% */
+    object-fit: cover; /* Ensure the video covers the area */
+}
+
+/* Buttons container */
+.buttons-container {
+    position: absolute;
+    bottom: -180%; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 300px; /* Adjust spacing between buttons */
+    z-index: 4; /* Ensure buttons are above the video */
+}
+
+/* Button styles */
+.button {
+    display: inline-block;
+    width: 80px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
+    overflow: hidden;
+    border-radius: 60%;
+    border: 2px solid rgb(255, 255, 255); /* Added black border to buttons */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the button */
+    display: block;
+}
+
+/* Button hover effect */
+.button:hover {
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+}
+
+/* Black image container */
+.black-image-container {
+    position: absolute;
+    top: calc(60px + 135%);
+    left: 0;
+    right: 0;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.black-image-container img {
+    width: 100%;
+    height: 400px;
+}
+
+/* WebP image container */
+/* WebP image container */
+.webp-image-container {
+    position: absolute;
+    top: 30%; /* Adjusted as needed to fit the viewport */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+}
+/* WebP image container */
+.webp-image-container img {
+    max-width: 100%;
+    max-height: 150%;
+    display: block;
+    opacity: 1;
+    border: none;
+    box-shadow: none;
+    animation: riseUp 1.5s ease-out; /* Apply the rise-up animation */
+}
+/* Text container */
+.text-container {
+    position: relative;
+    font-family: cursive;
+    font-size: 24px;
+    color: white;
+    word-spacing: 10px;
+    line-height: 1.5;
+    transform: translate(40%, 50px); /* Start position: shifted right by 40% and down by 50px */
+    opacity: 0;
+    animation: bounceIn 8s ease-out forwards; /* Apply the bounce-in animation with a slower duration */
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: translate(40%, 50px) scale(0.9); /* Start below, slightly scaled down, and shifted right */
+        opacity: 0;
+    }
+    60% {
+        transform: translate(40%, -10px) scale(1.1); /* Bounce upwards, scaled up, and shifted right */
+        opacity: 1;
+    }
+    80% {
+        transform: translate(40%, 5px) scale(1); /* Slight bounce down, and shifted right */
+    }
+    100% {
+        transform: translate(40%, 0) scale(1); /* End at the original position (shifted right) and scale */
+        opacity: 1;
+    }
+}
+@keyframes riseUp {
+    0% {
+        transform: translateY(100%) scale(0.5); /* Start from further below and significantly scaled down */
+        opacity: 0;
+    }
+    10% {
+        transform: translateY(90%) scale(0.55);
+        opacity: 0.1;
+    }
+    20% {
+        transform: translateY(80%) scale(0.6);
+        opacity: 0.2;
+    }
+    30% {
+        transform: translateY(70%) scale(0.65);
+        opacity: 0.3;
+    }
+    40% {
+        transform: translateY(60%) scale(0.7);
+        opacity: 0.4;
+    }
+    50% {
+        transform: translateY(50%) scale(0.75);
+        opacity: 0.5;
+    }
+    60% {
+        transform: translateY(40%) scale(0.8);
+        opacity: 0.6;
+    }
+    70% {
+        transform: translateY(30%) scale(0.85);
+        opacity: 0.7;
+    }
+    80% {
+        transform: translateY(20%) scale(0.9);
+        opacity: 0.8;
+    }
+    90% {
+        transform: translateY(10%) scale(0.95);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(0) scale(1); /* End at the original position and scale */
+        opacity: 1;
+    }
+}
+
+.animated-element {
+    animation: riseUp 1.5s ease-in-out forwards; /* Adjust duration and easing as needed */
+}
+
+/* Second sentence specific styles */
+.second-sentence {
+    display: block;
+    margin-top: 10%;
+}
+/* Arrow Button Overlay */
+.arrow-button-overlay {
+    position: absolute; /* Position it relative to the black-image-container */
+    top: 95%; /* Initial vertical position */
+    right: 738px; /* Initial horizontal position */
+    transform: translateY(-50%); /* Center it vertically based on its height */
+    z-index: 1000; /* Ensure it is above other content */
+    transition: transform 0.3s ease; /* Smooth transition for movement */
+}
+
+/* Arrow Button Styling */
+.arrow-button {
+    width: 80px; /* Increased size */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer; /* Indicates it's clickable */
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+    display: block; /* Make sure it's a block element */
+}
+
+/* Rotate Arrow on Hover */
+.arrow-button-overlay:hover .arrow-button {
+    transform: rotate(45deg); /* Rotate arrow by 45 degrees on hover */
+    box-shadow: none; /* Remove shadow on hover */
+}
+
+/* Optional Button Styling */
+.arrow-button-overlay {
+    border-radius: 50%; /* Make the overlay circular */
+    padding: 10px; /* Space around the button */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the arrow button */
+}
+
+/* Movement when clicked */
+.arrow-button-overlay.clicked {
+    top: calc(95% + 85%); /* Move down by 40% from initial position */
+}
+
+
+.vertical-lines-container {
+    position: absolute;
+    top: calc(82% + 1150px - 4.3px); /* Same as video-container top */
+    left: 0;
+    right: 0;
+    height: 27%; /* Make it cover the entire height */
+    pointer-events: none; /* Make sure it doesn't interfere with other elements */
+    z-index: 2; /* Ensure it's above the video but below other content */
+    display: flex;
+    justify-content: space-between; /* Evenly space out the lines */
+    align-items: center; /* Center lines vertically */
+}
+
+/* Vertical lines */
+.vertical-lines-container::before,
+.vertical-lines-container::after,
+.vertical-lines-container div {
+    content: "";
+    position: absolute;
+    width: 2px; /* Slightly thicker for better visibility */
+    background-color: rgb(255, 255, 255); /* Semi-transparent black for subtlety */
+    height: 100%; /* Full height of the container */
+    border-radius: 2px; /* Rounded edges for a softer look */
+}
+
+.vertical-lines-container::before {
+    left: 24.5%; /* As specified */
+}
+
+.vertical-lines-container div {
+    left: 49.88%; /* As specified */
+    transform: translateX(-50%); /* Center alignment */
+}
+
+.vertical-lines-container::after {
+    left: 75.25%; /* As specified */
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply the fade-in animation to the text-below-note class */
+.text-below-note {
+    position: absolute;
+    bottom: -139.5%; /* Adjust based on your layout */
+    left: 51%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: rgb(255, 255, 255); /* Adjust text color as needed */
+    font-family: 'Bebas Neue', sans-serif; /* Changed to Bebas Neue font */
+    font-size: 25px; /* Adjust text size */
+    z-index: 5; /* Ensure it's above other content if necessary */
+    width: 100%; /* Adjust width as needed */
+    pointer-events: none; /* Ensure it doesn't interfere with other elements */
+    animation: fadeIn 7s ease-in-out; /* Apply the fade-in animation with a duration of 7 seconds */
+}
+
+.text-below-note p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply the fade-in animation to the text-below-note-2 class */
+.text-below-note-2 {
+    position: absolute;
+    bottom: -139.5%; /* Adjust based on your layout */
+    left: 25%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: rgb(255, 255, 255); /* Adjust text color as needed */
+    font-family: 'Bebas Neue', sans-serif; /* Changed to Bebas Neue font */
+    font-size: 25px; /* Adjust text size */
+    z-index: 5; /* Ensure it's above other content if necessary */
+    width: 100%; /* Adjust width as needed */
+    pointer-events: none; /* Ensure it doesn't interfere with other elements */
+    animation: fadeIn 7s ease-in-out; /* Apply the fade-in animation with a duration of 7 seconds */
+}
+
+.text-below-note-2 p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply the fade-in animation to the text-below-note-3 class */
+.text-below-note-3 {
+    position: absolute;
+    bottom: -139.5%; /* Adjust based on your layout */
+    left: 75%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: rgb(255, 255, 255); /* Adjust text color as needed */
+    font-family: 'Bebas Neue', sans-serif; /* Changed to Bebas Neue font */
+    font-size: 25px; /* Adjust text size */
+    z-index: 5; /* Ensure it's above other content if necessary */
+    width: 100%; /* Adjust width as needed */
+    pointer-events: none; /* Ensure it doesn't interfere with other elements */
+    animation: fadeIn 7s ease-in-out; /* Apply the fade-in animation with a duration of 7 seconds */
+}
+
+.text-below-note-3 p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Define the keyframes for the slide-in animation */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%) scale(0.8); /* Start off-screen to the left and smaller */
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(-10%) scale(0.9); /* Slightly past its final position to create a smooth effect */
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(-50%) scale(1); /* End at the original position and size */
+        opacity: 1;
+    }
+}
+
+.text-below-note-4 {
+    position: absolute;
+    bottom: -123%; /* Adjust based on your layout */
+    left: 50%; /* Start at the center horizontally */
+    transform: translateX(-50%); /* Center the element horizontally */
+    text-align: center;
+    color: rgb(255, 255, 255); /* Adjust text color as needed */
+    font-family: 'Bebas Neue', sans-serif; /* Changed to Bebas Neue font */
+    font-size: 35px; /* Adjust text size */
+    z-index: 5; /* Ensure it's above other content if necessary */
+    width: 100%; /* Adjust width as needed */
+    pointer-events: none; /* Ensure it doesn't interfere with other elements */
+    animation: slideInFromLeft 6s ease-in-out; /* Apply the slide-in animation */
+}
+
+.text-below-note-4 p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* PNG Image Container */
+.png-image-container {
+    position: absolute;
+    top: 134%; /* Adjust to position downwards as needed */
+    left: 41.5%;
+    transform: translate(-50%, -50%) scale(0.2); /* Center horizontally and reduce scale by 70% */
+    z-index: 5; /* Ensure it's above the video but below other important content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PNG Image Styling */
+.png-image-container img {
+    max-width: 100%; /* Ensure it scales down to a small logo size */
+    max-height: 100%; /* Ensure it scales down to a small logo size */
+    display: block;
+    opacity: 1; /* Ensure full opacity */
+    border: none;
+    box-shadow: none; /* Remove any box-shadow if added */
+}
+
+/* Button below SERVICES */
+/* New services button styles */
+.services-button-container {
+    position: relative;
+    text-align: center;
+    height: 100vh; /* Full height of the viewport */
+}
+
+/* Apply animation to the services button */
+/* Keyframes for a smooth, aesthetic rise-down animation */
+@keyframes riseDown {
+    0% {
+        transform: translate(-60%, -150%) scale(0.8); /* Start from 40% left and above with scaled down */
+        opacity: 0; /* Start fully transparent */
+    }
+    50% {
+        transform: translate(-50%, -80%) scale(1); /* Move to the center position */
+        opacity: 1; /* Fully opaque */
+    }
+    80% {
+        transform: translate(-50%, 0) scale(1); /* End at the original position and size */
+        opacity: 1; /* Remain fully opaque */
+    }
+    100% {
+        transform: translate(-50%, 0) scale(1); /* Final resting position */
+        opacity: 1; /* Remain fully opaque */
+    }
+}
+/* Apply animation to the services button */
+.services-button {
+    position: absolute;
+    bottom: -115%; /* Adjusted for visibility */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    display: inline-block;
+    padding: 12px 40px; /* Increased padding for a more substantial button */
+    border: 2px solid white; /* Border color white for better contrast */
+    background-color: black; /* Button background color black */
+    color: white; /* Font color white */
+    font-family: 'Bebas Neue', sans-serif; /* Changed to Bebas Neue font */
+    font-size: 20px;
+    text-decoration: none; /* Remove underline */
+    border-radius: 50px; /* More rounded corners */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    z-index: 10; /* Ensure it is above other elements */
+    animation: riseDown 4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Apply the rise and fall animation with smooth easing */
+}
+.services-button:hover {
+    background-color: white; /* Button background color on hover */
+    color: black; /* Font color on hover */
+    border-color: white; /* Border color on hover */
+}
+
+
+/* Hang container styles */
+.hangcontainer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 5; /* Ensure it's above other elements if necessary */
+}
+
+.hangcontainer img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+/* PNG Image Container */
+/* PNG Image Container */
+.png-image-container {
+    position: absolute;
+    top: 10%; /* Maintain the original position */
+    left: 93.5%; /* Maintain the original position */
+    transform: translate(-50%, -50%); /* Center the container based on its own dimensions */
+    z-index: 5; /* Ensure it's above the video but below other important content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PNG Image Styling */
+.png-image-container img {
+    max-width: none; /* Remove maximum width constraint */
+    max-height: none; /* Remove maximum height constraint */
+    width: auto; /* Use the image's original width */
+    height: auto; /* Use the image's original height */
+    display: block;
+    opacity: 1; /* Ensure full opacity */
+    border: none;
+    box-shadow: none; /* Remove any box-shadow if added */
+}
+/* New PNG Image Section */
+.new-png-container {
+    position: absolute;
+    left: 40.29%;
+    top: 220%; /* Position 50% down from the top of the black image */
+    transform: translate(-50%, -50%) scale(0.13) translateX(20px); /* Center horizontally, scale to 25%, shift right 20px */
+    z-index: 10; /* Ensure it is above other content */
+}
+
+.new-png-container img {
+    display: block; /* Remove default inline spacing */
+    max-width: 100%; /* Ensure image fits within the container */
+}
+/* New PNG image container */
+.new-png-container2 {
+    position: absolute;
+    top: 270%; /* Adjust this value as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.new-png-container2 img {
+    width: 2000px; /* Adjust width as needed */
+    height: auto;
+}
+/* General styles for responsiveness */
+@media (max-width: 1024px) {
+    header {
+        padding: 25px 15px;
+        font-size: 1.25rem; /* 20px */
+    }
+
+    nav ul li {
+        margin: 0 15px;
+    }
+
+    nav ul li a {
+        font-size: 1.125rem; /* 18px */
+    }
+
+    .buttons-container {
+        gap: 25px;
+    }
+
+    .button {
+        width: 70px;
+        height: 70px;
+    }
+
+    .video-container {
+        transform: scale(0.8);
+    }
+
+    .text-container {
+        font-size: 1.5rem; /* 24px */
+        transform: translate(15%, 20px);
+    }
+
+    .text-container-2 {
+        font-size: 1.75rem; /* 28px */
+        transform: translate(15%, 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 10px;
+        font-size: 1rem; /* 16px */
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    nav ul li a {
+        font-size: 1rem; /* 16px */
+    }
+
+    .buttons-container {
+        gap: 20px;
+    }
+
+    .button {
+        width: 60px;
+        height: 60px;
+    }
+
+    .video-container {
+        transform: scale(0.7);
+    }
+
+    .text-container {
+        font-size: 1.25rem; /* 20px */
+        transform: translate(15%, 15px);
+    }
+
+    .text-container-2 {
+        font-size: 1.5rem; /* 24px */
+        transform: translate(15%, 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px 10px;
+        font-size: 0.875rem; /* 14px */
+    }
+
+    nav ul li {
+        margin: 0 5px;
+    }
+
+    nav ul li a {
+        font-size: 0.875rem; /* 14px */
+    }
+
+    .buttons-container {
+        gap: 15px;
+    }
+
+    .button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .video-container {
+        transform: scale(0.6);
+    }
+
+    .text-container {
+        font-size: 1rem; /* 16px */
+        transform: translate(10%, 10px);
+    }
+
+    .text-container-2 {
+        font-size: 1.125rem; /* 18px */
+        transform: translate(10%, 5px);
+    }
+}
+/* Slider Container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 110vh;
+    margin: 20px auto;
+    overflow: hidden;
+    margin-top: calc(83.77% + 3.2%); /* Adjust margin-top to move slider down by 10% */
+}
+
+/* Slider */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+/* Slider Slide */
+.slider-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.slider-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Slider Buttons */
+.slider-button {
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 32px;
+    line-height: 60px;
+    text-align: center;
+    z-index: 10;
+}
+
+.slider-button.left {
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+.slider-button.right {
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+
+
+/* Background Image Container */
+/* Background Image Container */
+.bg-image-40-container {
+    position: relative;
+    width: 100%;
+    height: 610px; /* Adjust the height as needed */
+    text-align: center;
+    overflow: hidden; /* Ensures no overflow from the image */
+    z-index: 1;
+    margin-top: -40px; /* Adjust the margin as needed */
+}
+
+/* Image inside the container */
+.bg-image-40-container img {
+    width: 100%;
+    height: 100%; /* Keep the height consistent */
+    display: block;
+    object-fit: cover; /* Ensures the image covers the container */
+    position: relative;
+    transform: translateY(0%); /* Ensure the image is positioned correctly */
+}
+
+/* Profile Image Container */
+.profile-container {
+    position: absolute;
+    top: 436%; /* Adjust this to the appropriate position */
+    left: 78%;
+    transform: translateX(-50%);
+    z-index: 31; /* Ensure it appears above other content */
+    display: flex; /* Aligns children centrally */
+    justify-content: center; /* Aligns children horizontally in the center */
+    align-items: center; /* Aligns children vertically in the center */
+}
+
+.profile-container a {
+    display: inline-block; /* Ensures the anchor tag only takes up as much space as the image */
+}
+
+.profile-container img {
+    width: 60%; /* Scale the width as needed */
+    height: auto; /* Adjust height to maintain aspect ratio */
+    max-width: 700px; /* Optional: Set a max width to control the maximum size (adjust as needed) */
+    max-height: 600px; /* Optional: Set a max height to control the maximum size (adjust as needed) */
+    border-radius: 0; /* Remove the circle effect, making it a rectangle */
+    object-fit: cover; /* Ensure the image covers the container without stretching */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.profile-container a:hover img {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+}
+/* Keyframes for Fade-In Animation */
+@keyframes fadeInSecond {
+    0% {
+        opacity: 0; /* Start fully transparent */
+        transform: translateY(20px); /* Start from below */
+    }
+    50% {
+        opacity: 0.5; /* Midway opacity */
+        transform: translateY(10px); /* Slightly moved */
+    }
+    100% {
+        opacity: 1; /* End fully opaque */
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
+/* Text Overlay Section */
+.text-fiver1-container {
+    position: absolute; /* Absolute positioning within the parent container */
+    top: 426%; /* Position from the top of the container */
+    left: 68%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    width: calc(100% - 40px); /* Ensure text does not overflow */
+    box-sizing: border-box;
+    z-index: 20; /* Ensure the text appears above the image */
+    text-align: center; /* Center text alignment */
+}
+
+/* Text Style with Animation */
+.textfiver1-overlay {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5em;
+    font-weight: bold; /* Makes the text bold */
+    color: #505050; /* Text color */
+    padding: 20px; /* Increased padding for better spacing */
+    border-radius: 10px; /* More rounded corners */
+    text-align: center; /* Center text alignment */
+    width: fit-content; /* Adjust width to fit the content */
+    margin: 0; /* Remove default margin */
+    animation: fadeInSecond 7s ease-in-out forwards; /* Apply the fade-in animation with persistence */
+    opacity: 0; /* Ensure it starts hidden */
+}
+.text-fiver2-container {
+    position: absolute; /* Absolute positioning within the parent container */
+    top: 462%; /* Position from the top of the container */
+    left: 97%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    width: calc(100% - 40px); /* Ensure text does not overflow */
+    box-sizing: border-box;
+    z-index: 20; /* Ensure the text appears above the image */
+    text-align: center; /* Center text alignment */
+}
+
+/* Text Style with Animation */
+.textfiver2-overlay {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.7em;
+    font-weight: bold; /* Makes the text bold */
+    color: #505050; /* Text color */
+    padding: 20px; /* Increased padding for better spacing */
+    border-radius: 10px; /* More rounded corners */
+    text-align: center; /* Center text alignment */
+    width: fit-content; /* Adjust width to fit the content */
+    margin: 0; /* Remove default margin */
+    animation: fadeInSecond 7s ease-in-out forwards; /* Apply the fade-in animation with persistence */
+    opacity: 0; /* Ensure it starts hidden */
+}
+/* Keyframes for Fade-In and Fall-Down Animation */
+@keyframes fadeInFallDown {
+    0% {
+        opacity: 0; /* Start fully transparent */
+        transform: translateY(-50px); /* Start above the final position */
+    }
+    50% {
+        opacity: 0.5; /* Midway opacity */
+        transform: translateY(10px); /* Slightly moved down */
+    }
+    100% {
+        opacity: 1; /* End fully opaque */
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
+/* Text Overlay Section */
+.text-fiver3-container {
+    position: absolute; /* Absolute positioning within the parent container */
+    top: 408.85%; /* Position from the top of the container */
+    left: 112%; /* Adjust horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    width: calc(100% - 40px); /* Ensure text does not overflow */
+    box-sizing: border-box;
+    z-index: 20; /* Ensure the text appears above the image */
+    text-align: center; /* Center text alignment */
+}
+
+/* Text Style with Animation */
+.textfiver3-overlay {
+    font-family: 'Bebas Neue', sans-serif; /* Font family */
+    font-size: 2.5em; /* Font size */
+    font-weight: bold; /* Makes the text bold */
+    color: rgba(0, 0, 0, 0.71); /* Text color */
+    padding: 20px; /* Padding for better spacing */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center text alignment */
+    width: fit-content; /* Adjust width to fit the content */
+    margin: 0; /* Remove default margin */
+    animation: fadeInFallDown 7s ease-in-out forwards; /* Apply the animation with persistence */
+    opacity: 0; /* Ensure it starts hidden */
+}
+
+/* Hangblack Image Container */
+.hangblack-container {
+    position: absolute; /* Adjust positioning as needed */
+    top: 428.5%; /* Position from the top of the container or page */
+    left: 80%; /* Position from the left of the container or page */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    z-index: 12; /* Ensure it appears above other content if necessary */
+    display: flex; /* Aligns children centrally */
+    justify-content: center; /* Aligns children horizontally in the center */
+    align-items: center; /* Aligns children vertically in the center */
+    width: 200%; /* Increase container width to accommodate larger image */
+    height: 200%; /* Increase container height to accommodate larger image */
+    overflow: hidden; /* Hide overflow if needed */
+    animation: fadeInb 12s ease-out; /* Apply the fade-in animation */
+}
+
+/* Hangblack Image */
+.hangblack-container img {
+    width: 50%; /* Scale image to fill the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 20%; /* Remove max-width restriction */
+    max-height: 20%; /* Remove max-height restriction */
+    border-radius: 0; /* No rounded corners for this image */
+    object-fit: cover; /* Ensure the image covers the container without stretching */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Optional hover effect if you want */
+.hangblack-container img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+}
+
+/* Bline Image Container */
+/* Define the keyframes for the fade-in animation */
+@keyframes fadeInb {
+    0% {
+        opacity: 0; /* Start with no opacity */
+    }
+    100% {
+        opacity: 1; /* End with full opacity */
+    }
+}
+
+/* Bline Image Container */
+.bline-container {
+    position: absolute; /* Adjust positioning as needed */
+    top: 468.3%; /* Position from the top of the container or page */
+    left: 20%; /* Position from the left of the container or page */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    z-index: 12; /* Ensure it appears above other content if necessary */
+    display: flex; /* Aligns children centrally */
+    justify-content: center; /* Aligns children horizontally in the center */
+    align-items: center; /* Aligns children vertically in the center */
+    width: 200%; /* Increase container width to accommodate larger image */
+    height: 200%; /* Increase container height to accommodate larger image */
+    overflow: hidden; /* Hide overflow if needed */
+    animation: fadeInb 12s ease-out; /* Apply the fade-in animation */
+}
+
+/* Bline Image */
+.bline-container img {
+    width: 50%; /* Scale image to fill the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 10%; /* Adjust max-width restriction */
+    max-height: 10%; /* Adjust max-height restriction */
+    border-radius: 0; /* No rounded corners for this image */
+    object-fit: cover; /* Ensure the image covers the container without stretching */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Optional hover effect if you want */
+.bline-container img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+}
+
+/* Black Cover2 Section */
+.black-cover2-container {
+    position: relative;
+    width: 100%; /* Ensure it spans the full width of the container */
+    height: 610px; /* Match the height of .bg-image-40-container */
+    margin-top: 0; /* Adjust as needed to position it correctly below the previous section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Set z-index to stack it above other elements */
+    background-color: black; /* Background color if needed */
+}
+
+/* Image inside the Black Cover2 container */
+.black-cover2-container img {
+    width: 100%; /* Ensure the image spans the full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Limit the width to the container */
+    max-height: 100%; /* Limit the height to the container */
+    object-fit: cover; /* Ensure the image covers the container without stretching */
+    border-radius: 0; /* No rounded corners for this image */
+}
+
+/* New Images Section */
+.new-images1234-container {
+    position: absolute; /* Absolute positioning to overlay over the previous section */
+    top: 499%; /* Adjust this value if necessary to position the images 30% down */
+    left: 0;
+    width: 100%;
+    text-align: center; /* Center images horizontally */
+    z-index: 10; /* Ensure this is above other content */
+    pointer-events: none; /* Optional: Disable pointer events if these images should not be clickable */
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically if necessary */
+}
+
+/* New Images */
+.new-images1234-container .new-image {
+    width: 30%; /* Base width for images */
+    margin: 0 1%; /* Space between images */
+    opacity: 1; /* Fully visible */
+    transform: scale(0.6); /* Scale images to 70% of their original size */
+    /* Remove display: inline-block if using flexbox */
+}
+
+
+.new-image.el1 {
+    /* Additional styles for the first image, if needed */
+    position: relative;
+    top: 0;
+}
+
+.new-image.el2 {
+    /* Additional styles for the second image, if needed */
+    position: relative;
+    top: 0;
+}
+
+.new-image.el3 {
+    /* Additional styles for the third image, if needed */
+    position: relative;
+    top: 0;
+}
+/* White Hang Image Section */
+/* White Hang Image Section */
+.white-hang-container {
+    position: absolute; /* Position it relative to its containing block */
+    top: 479.3%; /* Adjust this value to position the image as needed */
+    left: 40%; /* Center horizontally */
+    width: 100%;
+    text-align: center; /* Center the image horizontally */
+    z-index: 10; /* Ensure it appears above other content */
+    transform: scale(0.7); /* Scale the image to 70% of its original size */
+    transform-origin: center; /* Scale from the center of the image */
+    opacity: 0; /* Start with invisible */
+    animation: whitefade 6s ease-out forwards; /* Apply the fade-in animation */
+}
+
+/* Animation Keyframes */
+@keyframes whitefade {
+    0% {
+        opacity: 0; /* Fully transparent at the start */
+        transform: scale(0.3); /* Ensure initial scale */
+    }
+    50% {
+        opacity: 0.5; /* Semi-transparent at the halfway point */
+        transform: scale(0.5); /* Slightly larger halfway */
+    }
+    100% {
+        opacity: 1; /* Fully opaque at the end */
+        transform: scale(0.7); /* Ensure final scale */
+    }
+}
+.white-hang-container img {
+    width: auto; /* Adjust if needed */
+    max-width: 100%; /* Ensure image does not exceed container width */
+    height: auto; /* Maintain aspect ratio */
+}
+/* Clients Text Section */
+.clients-text-container {
+    position: absolute; /* Position it relative to its containing block */
+    top: 494%; /* Position it 50% down from black-cover2-container */
+    left: 72.2%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    width: auto; /* Adjust width as needed */
+    max-width: 90%; /* Limit the maximum width */
+    text-align: center; /* Center text horizontally */
+    z-index: 20; /* Ensure it appears above other content */
+    padding: 20px; /* Padding around the text */
+    border-radius: 10px; /* Rounded corners */
+    opacity: 0; /* Start with invisible */
+    animation: clientfade 6s ease-out forwards; /* Apply the fade-in animation */
+}
+
+/* Animation Keyframes for Clients Text */
+@keyframes clientfade {
+    0% {
+        opacity: 0; /* Fully transparent at the start */
+        transform: scale(0.3) translateY(10%); /* Slightly scaled down and moved up */
+    }
+    50% {
+        opacity: 0.5; /* Semi-transparent at the halfway point */
+        transform: scale(0.6) translateY(5%); /* Slightly larger and moved closer to final position */
+    }
+    100% {
+        opacity: 1; /* Fully opaque at the end */
+        transform: scale(1) translateY(0); /* Full size and normal position */
+    }
+}
+
+/* Clients Text Styling */
+.clients-text {
+    font-family: 'Bebas Neue', sans-serif; /* Use Bebas Neue font */
+    font-size: 2.5rem; /* Adjust font-size as needed */
+    color: white; /* White color for the text */
+    margin: 0; /* Remove default margin */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Soft text shadow for readability */
+}
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
+/* Ensure video container is correctly positioned and sized */
+.testimonialvideo-container {
+    position: relative;
+    width: 100%;
+    height: 360vh; /* Adjust this height based on your design needs */
+    margin: 0 auto; /* Center the container if needed */
+    overflow: hidden; /* Ensure no overflow */
+    z-index: 1; /* Make sure the video is behind other content */
+}
+
+.testimonialvideo {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Center the video horizontally */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the container */
+    z-index: 1; /* Keeps the video in the background */
+    transform: translateX(-50%); /* Adjust position to center the video properly */
+}
+@media (max-width: 768px) {
+    .testimonialvideo-container {
+        height: 600vh; /* Reduce height for mobile */
+    }
+}
+
+/* Style for the text overlay */
+.testimonial-text-overlay {
+    position: absolute;
+    top: 1.7%; /* Position from the top */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the text exactly */
+    color: rgb(255, 255, 41); /* Text color */
+    font-family: 'Chelsea Market', cursive; /* Font style */
+    font-size: 3.3rem; /* Adjust font size as needed */
+    font-weight: bold; /* Make the font bolder for more impact */
+    letter-spacing: 2.2px; /* Increase letter spacing for a more distinctive look */
+    background: linear-gradient(45deg, #f1ff2e, #ffef15); /* Gradient text color */
+    -webkit-background-clip: text; /* Clip the background to text */
+    background-clip: text; /* Clip the background to text */
+    color: transparent; /* Make the actual text color transparent to show the gradient */
+    text-shadow: 2.8px 2.8px 5.25px rgba(0, 0, 0, 0.45); /* Reduced shadow by 50% */
+    z-index: 2; /* Ensure the text is above the video */
+}
+/* Responsive design for tablets */
+@media (max-width: 768px) {
+    .testimonial-text-overlay {
+        font-size: 2rem; /* Decrease font size */
+        letter-spacing: 1.8px; /* Adjust letter spacing */
+        top: 1%; /* Adjust top position */
+    }
+}
+
+/* Keyframes for the pop-up animation without rotation */
+@keyframes popupT11 {
+    0% {
+        top: 95%;
+        transform: translate(-50%, 95%) scale(0.65);
+    }
+    0.5% {
+        top: 90%;
+        transform: translate(-50%, 90%) scale(0.65);
+    }
+    10% {
+        top: 85%;
+        transform: translate(-50%, 85%) scale(0.65);
+    }
+    15% {
+        top: 80%;
+        transform: translate(-50%, 80%) scale(0.65);
+    }
+    20% {
+        top: 75%;
+        transform: translate(-50%, 75%) scale(0.65);
+    }
+    25% {
+        top: 70%;
+        transform: translate(-50%, 70%) scale(0.65);
+    }
+    30% {
+        top: 65%;
+        transform: translate(-50%, 65%) scale(0.65);
+    }
+    35% {
+        top: 60%;
+        transform: translate(-50%, 60%) scale(0.65);
+    }
+    40% {
+        top: 55%;
+        transform: translate(-50%, 55%) scale(0.65);
+    }
+    45% {
+        top: 50%;
+        transform: translate(-50%, 50%) scale(0.65);
+    }
+    50% {
+        top: 45%;
+        transform: translate(-50%, 45%) scale(0.65);
+    }
+    55% {
+        top: 40%;
+        transform: translate(-50%, 40%) scale(0.65);
+    }
+    60% {
+        top: 35%;
+        transform: translate(-50%, 35%) scale(0.65);
+    }
+    65% {
+        top: 30%;
+        transform: translate(-50%, 30%) scale(0.65);
+    }
+    70% {
+        top: 25%;
+        transform: translate(-50%, 25%) scale(0.65);
+    }
+    75% {
+        top: 20%;
+        transform: translate(-50%, 20%) scale(0.65);
+    }
+    80% {
+        top: 15%;
+        transform: translate(-50%, 15%) scale(0.65);
+    }
+    85% {
+        top: 12.5%;
+        transform: translate(-50%, 12.5%) scale(0.65);
+    }
+    90% {
+        top: 10%;
+        transform: translate(-50%, 10%) scale(0.65);
+    }
+    95% {
+        top: 8.75%;
+        transform: translate(-50%, 8.75%) scale(0.65);
+    }
+    100% {
+        top: 6.35%;
+        transform: translate(-50%, 6.35%) scale(0.65);
+    }
+}
+@keyframes popupT12 {
+    0% {
+        top: 95%;
+        transform: translate(-50%, 95%) scale(0.65) rotate(-10deg);
+    }
+    2.5% {
+        top: 91.6%;
+        transform: translate(-50%, 91.6%) scale(0.65) rotate(-10deg);
+    }
+    5% {
+        top: 88.2%;
+        transform: translate(-50%, 88.2%) scale(0.65) rotate(-10deg);
+    }
+    7.5% {
+        top: 84.8%;
+        transform: translate(-50%, 84.8%) scale(0.65) rotate(-10deg);
+    }
+    10% {
+        top: 81.4%;
+        transform: translate(-50%, 81.4%) scale(0.65) rotate(-10deg);
+    }
+    12.5% {
+        top: 78%;
+        transform: translate(-50%, 78%) scale(0.65) rotate(-10deg);
+    }
+    15% {
+        top: 74.6%;
+        transform: translate(-50%, 74.6%) scale(0.65) rotate(-10deg);
+    }
+    17.5% {
+        top: 71.2%;
+        transform: translate(-50%, 71.2%) scale(0.65) rotate(-10deg);
+    }
+    20% {
+        top: 67.8%;
+        transform: translate(-50%, 67.8%) scale(0.65) rotate(-10deg);
+    }
+    22.5% {
+        top: 64.4%;
+        transform: translate(-50%, 64.4%) scale(0.65) rotate(-10deg);
+    }
+    25% {
+        top: 61%;
+        transform: translate(-50%, 61%) scale(0.65) rotate(-10deg);
+    }
+    27.5% {
+        top: 57.6%;
+        transform: translate(-50%, 57.6%) scale(0.65) rotate(-10deg);
+    }
+    30% {
+        top: 54.2%;
+        transform: translate(-50%, 54.2%) scale(0.65) rotate(-10deg);
+    }
+    32.5% {
+        top: 50.8%;
+        transform: translate(-50%, 50.8%) scale(0.65) rotate(-10deg);
+    }
+    35% {
+        top: 47.4%;
+        transform: translate(-50%, 47.4%) scale(0.65) rotate(-10deg);
+    }
+    37.5% {
+        top: 44%;
+        transform: translate(-50%, 44%) scale(0.65) rotate(-10deg);
+    }
+    40% {
+        top: 40.6%;
+        transform: translate(-50%, 40.6%) scale(0.65) rotate(-10deg);
+    }
+    42.5% {
+        top: 37.2%;
+        transform: translate(-50%, 37.2%) scale(0.65) rotate(-10deg);
+    }
+    45% {
+        top: 33.8%;
+        transform: translate(-50%, 33.8%) scale(0.65) rotate(-10deg);
+    }
+    47.5% {
+        top: 30.4%;
+        transform: translate(-50%, 30.4%) scale(0.65) rotate(-10deg);
+    }
+    50% {
+        top: 27%;
+        transform: translate(-50%, 27%) scale(0.65) rotate(-10deg);
+    }
+    52.5% {
+        top: 23.6%;
+        transform: translate(-50%, 23.6%) scale(0.65) rotate(-10deg);
+    }
+    55% {
+        top: 20.2%;
+        transform: translate(-50%, 20.2%) scale(0.65) rotate(-10deg);
+    }
+    57.5% {
+        top: 16.8%;
+        transform: translate(-50%, 16.8%) scale(0.65) rotate(-10deg);
+    }
+    60% {
+        top: 13.4%;
+        transform: translate(-50%, 13.4%) scale(0.65) rotate(-10deg);
+    }
+    62.5% {
+        top: 10%;
+        transform: translate(-50%, 10%) scale(0.65) rotate(-10deg);
+    }
+    65% {
+        top: 6.6%;
+        transform: translate(-50%, 6.6%) scale(0.65) rotate(-10deg);
+    }
+    67.5% {
+        top: 7%;
+        transform: translate(-50%, 7%) scale(0.65) rotate(-10deg);
+    }
+}
+@keyframes popupT14 {
+    0% {
+        top: 95%;
+        transform: translate(-50%, 95%) scale(0.65) rotate(0deg);
+    }
+    0.5% {
+        top: 90%;
+        transform: translate(-50%, 90%) scale(0.65) rotate(0.4deg);
+    }
+    5% {
+        top: 85%;
+        transform: translate(-50%, 85%) scale(0.65) rotate(1.5deg);
+    }
+    10% {
+        top: 80%;
+        transform: translate(-50%, 80%) scale(0.65) rotate(3deg);
+    }
+    15% {
+        top: 75%;
+        transform: translate(-50%, 75%) scale(0.65) rotate(4.5deg);
+    }
+    20% {
+        top: 70%;
+        transform: translate(-50%, 70%) scale(0.65) rotate(6deg);
+    }
+    25% {
+        top: 65%;
+        transform: translate(-50%, 65%) scale(0.65) rotate(7.5deg);
+    }
+    30% {
+        top: 60%;
+        transform: translate(-50%, 60%) scale(0.65) rotate(8deg);
+    }
+    35% {
+        top: 55%;
+        transform: translate(-50%, 55%) scale(0.65) rotate(8deg);
+    }
+    40% {
+        top: 50%;
+        transform: translate(-50%, 50%) scale(0.65) rotate(8deg);
+    }
+    45% {
+        top: 45%;
+        transform: translate(-50%, 45%) scale(0.65) rotate(8deg);
+    }
+    50% {
+        top: 40%;
+        transform: translate(-50%, 40%) scale(0.65) rotate(8deg);
+    }
+    55% {
+        top: 35%;
+        transform: translate(-50%, 35%) scale(0.65) rotate(8deg);
+    }
+    60% {
+        top: 30%;
+        transform: translate(-50%, 30%) scale(0.65) rotate(8deg);
+    }
+    65% {
+        top: 25%;
+        transform: translate(-50%, 25%) scale(0.65) rotate(8deg);
+    }
+    70% {
+        top: 20%;
+        transform: translate(-50%, 20%) scale(0.65) rotate(8deg);
+    }
+    75% {
+        top: 15%;
+        transform: translate(-50%, 15%) scale(0.65) rotate(8deg);
+    }
+    80% {
+        top: 12.5%;
+        transform: translate(-50%, 12.5%) scale(0.65) rotate(8deg);
+    }
+    85% {
+        top: 10%;
+        transform: translate(-50%, 10%) scale(0.65) rotate(8deg);
+    }
+    90% {
+        top: 9.75%;
+        transform: translate(-50%, 9.75%) scale(0.65) rotate(8deg);
+    }
+    95% {
+        top: 8.5%;
+        transform: translate(-50%, 8.5%) scale(0.65) rotate(8deg);
+    }
+    100% {
+        top: 7%;
+        transform: translate(-50%, 7%) scale(0.65) rotate(8deg);
+    }
+}
+@keyframes popupT131 {
+    0% {
+        top: 100%;
+        transform: translate(-50%, 100%) scale(0.65);
+    }
+    5% {
+        top: 98%;
+        transform: translate(-50%, 98%) scale(0.65);
+    }
+    10% {
+        top: 95%;
+        transform: translate(-50%, 95%) scale(0.65);
+    }
+    15% {
+        top: 93%;
+        transform: translate(-50%, 93%) scale(0.65);
+    }
+    20% {
+        top: 90%;
+        transform: translate(-50%, 90%) scale(0.65);
+    }
+    25% {
+        top: 85%;
+        transform: translate(-50%, 85%) scale(0.65);
+    }
+    30% {
+        top: 80%;
+        transform: translate(-50%, 80%) scale(0.65);
+    }
+    35% {
+        top: 75%;
+        transform: translate(-50%, 75%) scale(0.65);
+    }
+    40% {
+        top: 70%;
+        transform: translate(-50%, 70%) scale(0.65);
+    }
+    45% {
+        top: 65%;
+        transform: translate(-50%, 65%) scale(0.65);
+    }
+    50% {
+        top: 60%;
+        transform: translate(-50%, 60%) scale(0.65);
+    }
+    55% {
+        top: 55%;
+        transform: translate(-50%, 55%) scale(0.65);
+    }
+    60% {
+        top: 50%;
+        transform: translate(-50%, 50%) scale(0.65);
+    }
+    65% {
+        top: 45%;
+        transform: translate(-50%, 45%) scale(0.65);
+    }
+    70% {
+        top: 40%;
+        transform: translate(-50%, 40%) scale(0.65);
+    }
+    75% {
+        top: 35%;
+        transform: translate(-50%, 35%) scale(0.65);
+    }
+    80% {
+        top: 30%;
+        transform: translate(-50%, 30%) scale(0.65);
+    }
+    85% {
+        top: 25%;
+        transform: translate(-50%, 25%) scale(0.55);
+    }
+    90% {
+        top: 20%;
+        transform: translate(-50%, 20%) scale(0.55);
+    }
+    95% {
+        top: 15%;
+        transform: translate(-50%, 15%) scale(0.55);
+    }
+    100% {
+        top: 10%;
+        transform: translate(-50%, 10%) scale(0.55);
+    }
+}
+@keyframes popupT21 {
+    0% {
+        top: 80%; /* Starting point */
+        transform: translate(-50%, 80%) scale(0.65) rotate(0deg); /* Starting position, scale, and rotation */
+    }
+    5% {
+        top: 76.55%;
+        transform: translate(-50%, 76.55%) scale(0.65) rotate(0.2deg); /* Slight rotation */
+    }
+    10% {
+        top: 73.1%;
+        transform: translate(-50%, 73.1%) scale(0.65) rotate(0.5deg);
+    }
+    15% {
+        top: 69.65%;
+        transform: translate(-50%, 69.65%) scale(0.65) rotate(0.8deg);
+    }
+    20% {
+        top: 66.2%;
+        transform: translate(-50%, 66.2%) scale(0.65) rotate(1.1deg);
+    }
+    25% {
+        top: 62.75%;
+        transform: translate(-50%, 62.75%) scale(0.65) rotate(1.3deg);
+    }
+    30% {
+        top: 59.3%;
+        transform: translate(-50%, 59.3%) scale(0.65) rotate(1.5deg);
+    }
+    35% {
+        top: 55.85%;
+        transform: translate(-50%, 55.85%) scale(0.65) rotate(1.8deg);
+    }
+    40% {
+        top: 52.4%;
+        transform: translate(-50%, 52.4%) scale(0.65) rotate(2.1deg);
+    }
+    45% {
+        top: 48.95%;
+        transform: translate(-50%, 48.95%) scale(0.65) rotate(2.3deg);
+    }
+    50% {
+        top: 45.5%;
+        transform: translate(-50%, 45.5%) scale(0.65) rotate(2.4deg);
+    }
+    55% {
+        top: 42.05%;
+        transform: translate(-50%, 42.05%) scale(0.65) rotate(2.7deg);
+    }
+    60% {
+        top: 38.6%;
+        transform: translate(-50%, 38.6%) scale(0.65) rotate(3deg);
+    }
+    65% {
+        top: 35.15%;
+        transform: translate(-50%, 35.15%) scale(0.65) rotate(3.1deg);
+    }
+    70% {
+        top: 31.7%;
+        transform: translate(-50%, 31.7%) scale(0.65) rotate(3.4deg);
+    }
+    75% {
+        top: 28.25%;
+        transform: translate(-50%, 28.25%) scale(0.65) rotate(3.6deg);
+    }
+    80% {
+        top: 24.8%;
+        transform: translate(-50%, 24.8%) scale(0.65) rotate(3.7deg);
+    }
+    85% {
+        top: 21.35%;
+        transform: translate(-50%, 21.35%) scale(0.65) rotate(3.8deg);
+    }
+    90% {
+        top: 17.9%;
+        transform: translate(-50%, 17.9%) scale(0.65) rotate(3.9deg);
+    }
+    95% {
+        top: 14.45%;
+        transform: translate(-50%, 14.45%) scale(0.65) rotate(3.99deg);
+    }
+    100% {
+        top: 11%; /* Ending point */
+        transform: translate(-50%, 11%) scale(0.65) rotate(4deg); /* Ending position, scale, and rotation */
+    }
+}
+@keyframes popupT22 {
+    0% {
+        top: 100%; /* Starting point */
+        transform: translate(-50%, 100%) scale(0.85); /* Starting position and scale */
+    }
+    5% {
+        top: 95.675%;
+        transform: translate(-50%, 95.675%) scale(0.85);
+    }
+    10% {
+        top: 91.35%;
+        transform: translate(-50%, 91.35%) scale(0.85);
+    }
+    15% {
+        top: 87.025%;
+        transform: translate(-50%, 87.025%) scale(0.85);
+    }
+    20% {
+        top: 82.7%;
+        transform: translate(-50%, 82.7%) scale(0.85);
+    }
+    25% {
+        top: 78.375%;
+        transform: translate(-50%, 78.375%) scale(0.85);
+    }
+    30% {
+        top: 74.05%;
+        transform: translate(-50%, 74.05%) scale(0.85);
+    }
+    35% {
+        top: 69.725%;
+        transform: translate(-50%, 69.725%) scale(0.85);
+    }
+    40% {
+        top: 65.4%;
+        transform: translate(-50%, 65.4%) scale(0.75);
+    }
+    45% {
+        top: 61.075%;
+        transform: translate(-50%, 61.075%) scale(0.75);
+    }
+    50% {
+        top: 56.75%;
+        transform: translate(-50%, 56.75%) scale(0.75);
+    }
+    55% {
+        top: 52.425%;
+        transform: translate(-50%, 52.425%) scale(0.75);
+    }
+    60% {
+        top: 48.1%;
+        transform: translate(-50%, 48.1%) scale(0.75);
+    }
+    65% {
+        top: 43.775%;
+        transform: translate(-50%, 43.775%) scale(0.75);
+    }
+    70% {
+        top: 39.45%;
+        transform: translate(-50%, 39.45%) scale(0.75);
+    }
+    75% {
+        top: 35.125%;
+        transform: translate(-50%, 35.125%) scale(0.75);
+    }
+    80% {
+        top: 30.8%;
+        transform: translate(-50%, 30.8%) scale(0.75);
+    }
+    85% {
+        top: 26.475%;
+        transform: translate(-50%, 26.475%) scale(0.75);
+    }
+    90% {
+        top: 22.15%;
+        transform: translate(-50%, 22.15%) scale(0.75);
+    }
+    95% {
+        top: 17.825%;
+        transform: translate(-50%, 17.825%) scale(0.75);
+    }
+    100% {
+        top: 13.5%; /* Ending point */
+        transform: translate(-50%, 13.5%) scale(0.75); /* Ending position and scale */
+    }
+}
+
+@keyframes popupT31 {
+    0% {
+        top: 80%; /* Starting point */
+        transform: translate(-50%, 80%) scale(0.65) rotate(-4deg); /* Starting position, scale, and rotation */
+    }
+    5% {
+        top: 76.55%;
+        transform: translate(-50%, 76.55%) scale(0.65) rotate(-3.6deg);
+    }
+    10% {
+        top: 73.1%;
+        transform: translate(-50%, 73.1%) scale(0.65) rotate(-3.2deg);
+    }
+    15% {
+        top: 69.65%;
+        transform: translate(-50%, 69.65%) scale(0.65) rotate(-2.8deg);
+    }
+    20% {
+        top: 66.2%;
+        transform: translate(-50%, 66.2%) scale(0.65) rotate(-2.4deg);
+    }
+    25% {
+        top: 62.75%;
+        transform: translate(-50%, 62.75%) scale(0.65) rotate(-2deg);
+    }
+    30% {
+        top: 59.3%;
+        transform: translate(-50%, 59.3%) scale(0.65) rotate(-1.6deg);
+    }
+    35% {
+        top: 55.85%;
+        transform: translate(-50%, 55.85%) scale(0.65) rotate(-1.2deg);
+    }
+    40% {
+        top: 52.4%;
+        transform: translate(-50%, 52.4%) scale(0.65) rotate(-0.8deg);
+    }
+    45% {
+        top: 48.95%;
+        transform: translate(-50%, 48.95%) scale(0.65) rotate(-0.4deg);
+    }
+    50% {
+        top: 45.5%;
+        transform: translate(-50%, 45.5%) scale(0.65) rotate(0deg);
+    }
+    55% {
+        top: 42.05%;
+        transform: translate(-50%, 42.05%) scale(0.65) rotate(0.4deg);
+    }
+    60% {
+        top: 38.6%;
+        transform: translate(-50%, 38.6%) scale(0.65) rotate(0.8deg);
+    }
+    65% {
+        top: 35.15%;
+        transform: translate(-50%, 35.15%) scale(0.65) rotate(1.2deg);
+    }
+    70% {
+        top: 31.7%;
+        transform: translate(-50%, 31.7%) scale(0.65) rotate(1.6deg);
+    }
+    75% {
+        top: 28.25%;
+        transform: translate(-50%, 28.25%) scale(0.65) rotate(2deg);
+    }
+    80% {
+        top: 24.8%;
+        transform: translate(-50%, 24.8%) scale(0.65) rotate(2.4deg);
+    }
+    85% {
+        top: 21.35%;
+        transform: translate(-50%, 21.35%) scale(0.65) rotate(2.8deg);
+    }
+    90% {
+        top: 17.9%;
+        transform: translate(-50%, 17.9%) scale(0.65) rotate(3.2deg);
+    }
+    95% {
+        top: 14.45%;
+        transform: translate(-50%, 14.45%) scale(0.65) rotate(3.6deg);
+    }
+    100% {
+        top: 11%; /* Ending point */
+        transform: translate(-50%, 11%) scale(0.65) rotate(4deg); /* Ending position, scale, and rotation */
+    }
+}
+@keyframes popupT32 {
+    0% {
+        top: 100%; /* Starting point */
+        transform: translate(-50%, 100%) scale(0.85) rotate(5deg); /* Starting position, scale, and rotation */
+    }
+    5% {
+        top: 95.675%;
+        transform: translate(-50%, 95.675%) scale(0.85) rotate(4.8deg);
+    }
+    10% {
+        top: 91.35%;
+        transform: translate(-50%, 91.35%) scale(0.85) rotate(4.6deg);
+    }
+    15% {
+        top: 87.025%;
+        transform: translate(-50%, 87.025%) scale(0.85) rotate(4.4deg);
+    }
+    20% {
+        top: 82.7%;
+        transform: translate(-50%, 82.7%) scale(0.85) rotate(4.2deg);
+    }
+    25% {
+        top: 78.375%;
+        transform: translate(-50%, 78.375%) scale(0.85) rotate(4deg);
+    }
+    30% {
+        top: 74.05%;
+        transform: translate(-50%, 74.05%) scale(0.85) rotate(3.8deg);
+    }
+    35% {
+        top: 69.725%;
+        transform: translate(-50%, 69.725%) scale(0.85) rotate(3.6deg);
+    }
+    40% {
+        top: 65.4%;
+        transform: translate(-50%, 65.4%) scale(0.75) rotate(3.4deg);
+    }
+    45% {
+        top: 61.075%;
+        transform: translate(-50%, 61.075%) scale(0.75) rotate(3.2deg);
+    }
+    50% {
+        top: 56.75%;
+        transform: translate(-50%, 56.75%) scale(0.75) rotate(3deg);
+    }
+    55% {
+        top: 52.425%;
+        transform: translate(-50%, 52.425%) scale(0.75) rotate(2.8deg);
+    }
+    60% {
+        top: 48.1%;
+        transform: translate(-50%, 48.1%) scale(0.75) rotate(2.6deg);
+    }
+    65% {
+        top: 43.775%;
+        transform: translate(-50%, 43.775%) scale(0.75) rotate(2.4deg);
+    }
+    70% {
+        top: 39.45%;
+        transform: translate(-50%, 39.45%) scale(0.75) rotate(2.2deg);
+    }
+    75% {
+        top: 35.125%;
+        transform: translate(-50%, 35.125%) scale(0.75) rotate(2deg);
+    }
+    80% {
+        top: 30.8%;
+        transform: translate(-50%, 30.8%) scale(0.75) rotate(1.8deg);
+    }
+    85% {
+        top: 26.475%;
+        transform: translate(-50%, 26.475%) scale(0.75) rotate(1.6deg);
+    }
+    90% {
+        top: 22.15%;
+        transform: translate(-50%, 22.15%) scale(0.75) rotate(1.4deg);
+    }
+    95% {
+        top: 17.825%;
+        transform: translate(-50%, 17.825%) scale(0.75) rotate(1.2deg);
+    }
+    100% {
+        top: 13.5%; /* Ending point */
+        transform: translate(-50%, 13.5%) scale(0.75) rotate(1deg); /* Ending position, scale, and rotation */
+    }
+}
+@keyframes popupT41 {
+    0% {
+        top: 100%; /* Starting point */
+        transform: translate(-50%, 100%) scale(0.65) rotate(4deg); /* Starting position, scale, and rotation */
+    }
+    5% {
+        top: 96.11%;
+        transform: translate(-50%, 96.11%) scale(0.65) rotate(3.8deg);
+    }
+    10% {
+        top: 92.22%;
+        transform: translate(-50%, 92.22%) scale(0.65) rotate(3.6deg);
+    }
+    15% {
+        top: 88.33%;
+        transform: translate(-50%, 88.33%) scale(0.65) rotate(3.4deg);
+    }
+    20% {
+        top: 84.44%;
+        transform: translate(-50%, 84.44%) scale(0.65) rotate(3.2deg);
+    }
+    25% {
+        top: 80.55%;
+        transform: translate(-50%, 80.55%) scale(0.65) rotate(3deg);
+    }
+    30% {
+        top: 76.66%;
+        transform: translate(-50%, 76.66%) scale(0.65) rotate(2.8deg);
+    }
+    35% {
+        top: 72.77%;
+        transform: translate(-50%, 72.77%) scale(0.65) rotate(2.6deg);
+    }
+    40% {
+        top: 68.88%;
+        transform: translate(-50%, 68.88%) scale(0.65) rotate(2.4deg);
+    }
+    45% {
+        top: 64.99%;
+        transform: translate(-50%, 64.99%) scale(0.65) rotate(2.2deg);
+    }
+    50% {
+        top: 61.1%;
+        transform: translate(-50%, 61.1%) scale(0.65) rotate(2deg);
+    }
+    55% {
+        top: 57.21%;
+        transform: translate(-50%, 57.21%) scale(0.65) rotate(1.8deg);
+    }
+    60% {
+        top: 53.32%;
+        transform: translate(-50%, 53.32%) scale(0.65) rotate(1.6deg);
+    }
+    65% {
+        top: 49.43%;
+        transform: translate(-50%, 49.43%) scale(0.65) rotate(1.4deg);
+    }
+    70% {
+        top: 45.54%;
+        transform: translate(-50%, 45.54%) scale(0.65) rotate(1.2deg);
+    }
+    75% {
+        top: 41.65%;
+        transform: translate(-50%, 41.65%) scale(0.65) rotate(1deg);
+    }
+    80% {
+        top: 37.76%;
+        transform: translate(-50%, 37.76%) scale(0.65) rotate(0.8deg);
+    }
+    85% {
+        top: 33.87%;
+        transform: translate(-50%, 33.87%) scale(0.65) rotate(0.6deg);
+    }
+    90% {
+        top: 29.98%;
+        transform: translate(-50%, 29.98%) scale(0.65) rotate(0.4deg);
+    }
+    95% {
+        top: 26.09%;
+        transform: translate(-50%, 26.09%) scale(0.65) rotate(0.2deg);
+    }
+    100% {
+        top: 22.2%; /* Ending point */
+        transform: translate(-50%, 22.2%) scale(0.65) rotate(0deg); /* Ending position, scale, and rotation */
+    }
+}
+@keyframes popupT42 {
+    0% {
+        top: 100%; /* Starting point */
+        transform: translate(-50%, 100%) scale(0.85) rotate(-5deg); /* Starting position, scale, and rotation */
+    }
+    5% {
+        top: 96.135%;
+        transform: translate(-50%, 96.135%) scale(0.85) rotate(-4.8deg);
+    }
+    10% {
+        top: 92.27%;
+        transform: translate(-50%, 92.27%) scale(0.85) rotate(-4.6deg);
+    }
+    15% {
+        top: 88.405%;
+        transform: translate(-50%, 88.405%) scale(0.85) rotate(-4.4deg);
+    }
+    20% {
+        top: 84.54%;
+        transform: translate(-50%, 84.54%) scale(0.85) rotate(-4.2deg);
+    }
+    25% {
+        top: 80.675%;
+        transform: translate(-50%, 80.675%) scale(0.85) rotate(-4deg);
+    }
+    30% {
+        top: 76.81%;
+        transform: translate(-50%, 76.81%) scale(0.85) rotate(-3.8deg);
+    }
+    35% {
+        top: 72.945%;
+        transform: translate(-50%, 72.945%) scale(0.85) rotate(-3.6deg);
+    }
+    40% {
+        top: 69.08%;
+        transform: translate(-50%, 69.08%) scale(0.75) rotate(-3.4deg);
+    }
+    45% {
+        top: 65.215%;
+        transform: translate(-50%, 65.215%) scale(0.75) rotate(-3.2deg);
+    }
+    50% {
+        top: 61.35%;
+        transform: translate(-50%, 61.35%) scale(0.75) rotate(-3deg);
+    }
+    55% {
+        top: 57.485%;
+        transform: translate(-50%, 57.485%) scale(0.75) rotate(-2.8deg);
+    }
+    60% {
+        top: 53.62%;
+        transform: translate(-50%, 53.62%) scale(0.75) rotate(-2.6deg);
+    }
+    65% {
+        top: 49.755%;
+        transform: translate(-50%, 49.755%) scale(0.75) rotate(-2.4deg);
+    }
+    70% {
+        top: 45.89%;
+        transform: translate(-50%, 45.89%) scale(0.75) rotate(-2.2deg);
+    }
+    75% {
+        top: 42.025%;
+        transform: translate(-50%, 42.025%) scale(0.75) rotate(-2deg);
+    }
+    80% {
+        top: 38.16%;
+        transform: translate(-50%, 38.16%) scale(0.75) rotate(-1.8deg);
+    }
+    85% {
+        top: 34.295%;
+        transform: translate(-50%, 34.295%) scale(0.75) rotate(-1.6deg);
+    }
+    90% {
+        top: 30.43%;
+        transform: translate(-50%, 30.43%) scale(0.75) rotate(-1.4deg);
+    }
+    95% {
+        top: 26.565%;
+        transform: translate(-50%, 26.565%) scale(0.75) rotate(-1.2deg);
+    }
+    100% {
+        top: 22.7%; /* Ending point */
+        transform: translate(-50%, 22.7%) scale(0.75) rotate(-1deg); /* Ending position, scale, and rotation */
+    }
+}
+
+@keyframes popupT51 {
+    0% {
+        top: 100%;
+        transform: translate(-50%, 100%) scale(0.65) rotate(-6.5deg);
+    }
+    5% {
+        top: 99.75%;
+        transform: translate(-50%, 99.75%) scale(0.65) rotate(-6.5deg);
+    }
+    10% {
+        top: 97.25%;
+        transform: translate(-50%, 97.25%) scale(0.65) rotate(-6.5deg);
+    }
+    15% {
+        top: 96%;
+        transform: translate(-50%, 96%) scale(0.65) rotate(-6.5deg);
+    }
+    20% {
+        top: 94%;
+        transform: translate(-50%, 94%) scale(0.65) rotate(-6.5deg);
+    }
+    25% {
+        top: 92%;
+        transform: translate(-50%, 92%) scale(0.65) rotate(-6.5deg);
+    }
+    30% {
+        top: 90%;
+        transform: translate(-50%, 90%) scale(0.65) rotate(-6.5deg);
+    }
+    35% {
+        top: 88%;
+        transform: translate(-50%, 88%) scale(0.65) rotate(-6.5deg);
+    }
+    40% {
+        top: 85.2%;
+        transform: translate(-50%, 85.2%) scale(0.65) rotate(-6.5deg);
+    }
+    45% {
+        top: 80.35%;
+        transform: translate(-50%, 80.35%) scale(0.65) rotate(-6.5deg);
+    }
+    50% {
+        top: 75.5%;
+        transform: translate(-50%, 75.5%) scale(0.65) rotate(-6.5deg);
+    }
+    55% {
+        top: 70.65%;
+        transform: translate(-50%, 70.65%) scale(0.65) rotate(-6.0deg);
+    }
+    60% {
+        top: 65.8%;
+        transform: translate(-50%, 65.8%) scale(0.65) rotate(-5.5deg);
+    }
+    65% {
+        top: 60.95%;
+        transform: translate(-50%, 60.95%) scale(0.65) rotate(-5.0deg);
+    }
+    70% {
+        top: 56.1%;
+        transform: translate(-50%, 56.1%) scale(0.65) rotate(-4.5deg);
+    }
+    75% {
+        top: 51.25%;
+        transform: translate(-50%, 51.25%) scale(0.65) rotate(-4.0deg);
+    }
+    80% {
+        top: 46.4%;
+        transform: translate(-50%, 46.4%) scale(0.65) rotate(-3.5deg);
+    }
+    85% {
+        top: 41.55%;
+        transform: translate(-50%, 41.55%) scale(0.65) rotate(-3.0deg);
+    }
+    90% {
+        top: 36.7%;
+        transform: translate(-50%, 36.7%) scale(0.65) rotate(-2.5deg);
+    }
+    95% {
+        top: 31.5%;
+        transform: translate(-50%, 31.5%) scale(0.65) rotate(-2.0deg);
+    }
+    100% {
+        top: 27%;
+        transform: translate(-50%, 27%) scale(0.65) rotate(-6.5deg);
+    }
+}
+@keyframes popupT52 {
+    0% {
+        top: 100%;
+        transform: translate(-50%, 100%) scale(0.85) rotate(6.5deg);
+    }
+    5% {
+        top: 99.75%;
+        transform: translate(-50%, 99.75%) scale(0.85) rotate(6.5deg);
+    }
+    10% {
+        top: 97.25%;
+        transform: translate(-50%, 97.25%) scale(0.85) rotate(6.5deg);
+    }
+    15% {
+        top: 96%;
+        transform: translate(-50%, 96%) scale(0.85) rotate(6.5deg);
+    }
+    20% {
+        top: 94%;
+        transform: translate(-50%, 94%) scale(0.85) rotate(6.5deg);
+    }
+    25% {
+        top: 92%;
+        transform: translate(-50%, 92%) scale(0.85) rotate(6.5deg);
+    }
+    30% {
+        top: 90%;
+        transform: translate(-50%, 90%) scale(0.85) rotate(6.5deg);
+    }
+    35% {
+        top: 88%;
+        transform: translate(-50%, 88%) scale(0.85) rotate(6.5deg);
+    }
+    40% {
+        top: 85.2%;
+        transform: translate(-50%, 85.2%) scale(0.85) rotate(6.5deg);
+    }
+    45% {
+        top: 80.35%;
+        transform: translate(-50%, 80.35%) scale(0.85) rotate(6.5deg);
+    }
+    50% {
+        top: 75.5%;
+        transform: translate(-50%, 75.5%) scale(0.85) rotate(6.5deg);
+    }
+    55% {
+        top: 70.65%;
+        transform: translate(-50%, 70.65%) scale(0.85) rotate(6.0deg);
+    }
+    60% {
+        top: 65.8%;
+        transform: translate(-50%, 65.8%) scale(0.85) rotate(5.5deg);
+    }
+    65% {
+        top: 60.95%;
+        transform: translate(-50%, 60.95%) scale(0.85) rotate(5.0deg);
+    }
+    70% {
+        top: 56.1%;
+        transform: translate(-50%, 56.1%) scale(0.85) rotate(4.5deg);
+    }
+    75% {
+        top: 51.25%;
+        transform: translate(-50%, 51.25%) scale(0.85) rotate(4.0deg);
+    }
+    80% {
+        top: 46.4%;
+        transform: translate(-50%, 46.4%) scale(0.85) rotate(3.5deg);
+    }
+    85% {
+        top: 41.55%;
+        transform: translate(-50%, 41.55%) scale(0.85) rotate(3.0deg);
+    }
+    90% {
+        top: 36.7%;
+        transform: translate(-50%, 36.7%) scale(0.85) rotate(2.5deg);
+    }
+    95% {
+        top: 31.5%;
+        transform: translate(-50%, 31.5%) scale(0.85) rotate(2.0deg);
+    }
+    100% {
+        top: 28%;
+        transform: translate(-50%, 28%) scale(0.85) rotate(6.5deg);
+    }
+}
+@keyframes popupT511 {
+    0% {
+        top: 100%;
+        transform: translate(-50%, 100%) scale(0.65) rotate(-6.5deg);
+    }
+    5% {
+        top: 95%;
+        transform: translate(-50%, 95%) scale(0.65) rotate(-6.0deg);
+    }
+    10% {
+        top: 90%;
+        transform: translate(-50%, 90%) scale(0.65) rotate(-5.5deg);
+    }
+    15% {
+        top: 85%;
+        transform: translate(-50%, 85%) scale(0.65) rotate(-5.0deg);
+    }
+    20% {
+        top: 80%;
+        transform: translate(-50%, 80%) scale(0.65) rotate(-4.5deg);
+    }
+    25% {
+        top: 75%;
+        transform: translate(-50%, 75%) scale(0.65) rotate(-4.0deg);
+    }
+    30% {
+        top: 70%;
+        transform: translate(-50%, 70%) scale(0.65) rotate(-3.5deg);
+    }
+    35% {
+        top: 65%;
+        transform: translate(-50%, 65%) scale(0.65) rotate(-3.0deg);
+    }
+    40% {
+        top: 60%;
+        transform: translate(-50%, 60%) scale(0.65) rotate(-2.5deg);
+    }
+    45% {
+        top: 55%;
+        transform: translate(-50%, 55%) scale(0.65) rotate(-2.0deg);
+    }
+    50% {
+        top: 50%;
+        transform: translate(-50%, 50%) scale(0.65) rotate(-1.5deg);
+    }
+    55% {
+        top: 49%;
+        transform: translate(-50%, 49%) scale(0.65) rotate(-1.0deg);
+    }
+    60% {
+        top: 48%;
+        transform: translate(-50%, 48%) scale(0.65) rotate(-0.5deg);
+    }
+    65% {
+        top: 47%;
+        transform: translate(-50%, 47%) scale(0.65) rotate(0deg);
+    }
+    70% {
+        top: 45%;
+        transform: translate(-50%, 45%) scale(0.65) rotate(0.5deg);
+    }
+    75% {
+        top: 43%;
+        transform: translate(-50%, 43%) scale(0.65) rotate(1.0deg);
+    }
+    80% {
+        top: 41%;
+        transform: translate(-50%, 41%) scale(0.65) rotate(1.5deg);
+    }
+    85% {
+        top: 39%;
+        transform: translate(-50%, 39%) scale(0.65) rotate(2.0deg);
+    }
+    90% {
+        top: 37%;
+        transform: translate(-50%, 37%) scale(0.65) rotate(2.5deg);
+    }
+    95% {
+        top: 34%;
+        transform: translate(-50%, 34%) scale(0.65) rotate(3.0deg);
+    }
+    100% {
+        top: 32%;
+        transform: translate(-50%, 32%) scale(0.65) rotate(3.5deg);
+    }
+}
+@keyframes popupT61 {
+    0% {
+        top: 100%;
+        transform: translate(-50%, 100%) scale(1.5) rotate(5deg);
+        opacity: 0; /* Fully transparent */
+    }
+    5% {
+        top: 98.45%;
+        transform: translate(-50%, 98.45%) scale(1.435) rotate(5deg);
+        opacity: 0.05; /* Slightly visible */
+    }
+    10% {
+        top: 96.9%;
+        transform: translate(-50%, 96.9%) scale(1.37) rotate(5deg);
+        opacity: 0.10; /* More visible */
+    }
+    15% {
+        top: 95.35%;
+        transform: translate(-50%, 95.35%) scale(1.305) rotate(5deg);
+        opacity: 0.15; /* More visible */
+    }
+    20% {
+        top: 93.8%;
+        transform: translate(-50%, 93.8%) scale(1.24) rotate(5deg);
+        opacity: 0.20; /* More visible */
+    }
+    25% {
+        top: 92.25%;
+        transform: translate(-50%, 92.25%) scale(1.175) rotate(5deg);
+        opacity: 0.25; /* More visible */
+    }
+    30% {
+        top: 90.7%;
+        transform: translate(-50%, 90.7%) scale(1.11) rotate(5deg);
+        opacity: 0.30; /* More visible */
+    }
+    35% {
+        top: 89.15%;
+        transform: translate(-50%, 89.15%) scale(1.045) rotate(5deg);
+        opacity: 0.35; /* More visible */
+    }
+    40% {
+        top: 87.6%;
+        transform: translate(-50%, 87.6%) scale(0.98) rotate(5deg);
+        opacity: 0.40; /* Almost fully visible */
+    }
+    45% {
+        top: 86.05%;
+        transform: translate(-50%, 86.05%) scale(0.915) rotate(5deg);
+        opacity: 0.45; /* Almost fully visible */
+    }
+    50% {
+        top: 84.5%;
+        transform: translate(-50%, 84.5%) scale(0.85) rotate(5deg);
+        opacity: 0.50; /* Half visible */
+    }
+    55% {
+        top: 82.95%;
+        transform: translate(-50%, 82.95%) scale(0.785) rotate(5deg);
+        opacity: 0.55; /* More visible */
+    }
+    60% {
+        top: 81.4%;
+        transform: translate(-50%, 81.4%) scale(0.72) rotate(5deg);
+        opacity: 0.60; /* More visible */
+    }
+    65% {
+        top: 79.85%;
+        transform: translate(-50%, 79.85%) scale(0.655) rotate(5deg);
+        opacity: 0.65; /* More visible */
+    }
+    70% {
+        top: 78.3%;
+        transform: translate(-50%, 78.3%) scale(0.59) rotate(5deg);
+        opacity: 0.70; /* More visible */
+    }
+    75% {
+        top: 76.75%;
+        transform: translate(-50%, 76.75%) scale(0.525) rotate(5deg);
+        opacity: 0.75; /* More visible */
+    }
+    80% {
+        top: 75.2%;
+        transform: translate(-50%, 75.2%) scale(0.46) rotate(5deg);
+        opacity: 0.80; /* More visible */
+    }
+    85% {
+        top: 73.65%;
+        transform: translate(-50%, 73.65%) scale(0.395) rotate(5deg);
+        opacity: 0.85; /* More visible */
+    }
+    90% {
+        top: 72.1%;
+        transform: translate(-50%, 72.1%) scale(0.33) rotate(5deg);
+        opacity: 0.90; /* More visible */
+    }
+    95% {
+        top: 70.55%;
+        transform: translate(-50%, 70.55%) scale(0.265) rotate(5deg);
+        opacity: 0.95; /* Almost fully visible */
+    }
+    100% {
+        top: 38%;
+        transform: translate(-50%, 38%) scale(0.7) rotate(5deg);
+        opacity: 1; /* Fully visible */
+    }
+}
+
+@keyframes popupT62 {
+    0% {
+        top: 100%;
+        transform: translate(-50%, 100%) scale(0.65) rotate(-6.5deg);
+    }
+    5% {
+        top: 96.95%;
+        transform: translate(-50%, 96.95%) scale(0.65) rotate(-6.025deg);
+    }
+    10% {
+        top: 93.9%;
+        transform: translate(-50%, 93.9%) scale(0.65) rotate(-5.55deg);
+    }
+    15% {
+        top: 90.85%;
+        transform: translate(-50%, 90.85%) scale(0.65) rotate(-5.075deg);
+    }
+    20% {
+        top: 87.8%;
+        transform: translate(-50%, 87.8%) scale(0.65) rotate(-4.6deg);
+    }
+    25% {
+        top: 84.75%;
+        transform: translate(-50%, 84.75%) scale(0.65) rotate(-4.125deg);
+    }
+    30% {
+        top: 81.7%;
+        transform: translate(-50%, 81.7%) scale(0.65) rotate(-3.65deg);
+    }
+    35% {
+        top: 78.65%;
+        transform: translate(-50%, 78.65%) scale(0.65) rotate(-3.175deg);
+    }
+    40% {
+        top: 75.6%;
+        transform: translate(-50%, 75.6%) scale(0.65) rotate(-2.7deg);
+    }
+    45% {
+        top: 72.55%;
+        transform: translate(-50%, 72.55%) scale(0.65) rotate(-2.225deg);
+    }
+    50% {
+        top: 69.5%;
+        transform: translate(-50%, 69.5%) scale(0.65) rotate(-1.75deg);
+    }
+    55% {
+        top: 66.45%;
+        transform: translate(-50%, 66.45%) scale(0.65) rotate(-1.275deg);
+    }
+    60% {
+        top: 63.4%;
+        transform: translate(-50%, 63.4%) scale(0.65) rotate(-0.8deg);
+    }
+    65% {
+        top: 60.35%;
+        transform: translate(-50%, 60.35%) scale(0.65) rotate(-0.325deg);
+    }
+    70% {
+        top: 57.3%;
+        transform: translate(-50%, 57.3%) scale(0.65) rotate(0.15deg);
+    }
+    75% {
+        top: 54.25%;
+        transform: translate(-50%, 54.25%) scale(0.65) rotate(0.625deg);
+    }
+    80% {
+        top: 51.2%;
+        transform: translate(-50%, 51.2%) scale(0.65) rotate(1.1deg);
+    }
+    85% {
+        top: 48.15%;
+        transform: translate(-50%, 48.15%) scale(0.65) rotate(1.575deg);
+    }
+    90% {
+        top: 45.1%;
+        transform: translate(-50%, 45.1%) scale(0.65) rotate(2.05deg);
+    }
+    95% {
+        top: 42.05%;
+        transform: translate(-50%, 42.05%) scale(0.65) rotate(2.525deg);
+    }
+    100% {
+        top: 39%;
+        transform: translate(-50%, 39%) scale(0.65) rotate(3.0deg);
+    }
+}
+@keyframes popupT71 {
+    0% {
+        top: 100%;
+        transform: translate(-50%, 100%) scale(0.65) rotate(-6.5deg);
+    }
+    5% {
+        top: 97.21%;
+        transform: translate(-50%, 97.21%) scale(0.65) rotate(-6.0deg);
+    }
+    10% {
+        top: 94.42%;
+        transform: translate(-50%, 94.42%) scale(0.65) rotate(-5.5deg);
+    }
+    15% {
+        top: 91.63%;
+        transform: translate(-50%, 91.63%) scale(0.65) rotate(-5.0deg);
+    }
+    20% {
+        top: 88.84%;
+        transform: translate(-50%, 88.84%) scale(0.65) rotate(-4.5deg);
+    }
+    25% {
+        top: 86.05%;
+        transform: translate(-50%, 86.05%) scale(0.65) rotate(-4.0deg);
+    }
+    30% {
+        top: 83.26%;
+        transform: translate(-50%, 83.26%) scale(0.65) rotate(-3.5deg);
+    }
+    35% {
+        top: 80.47%;
+        transform: translate(-50%, 80.47%) scale(0.65) rotate(-3.0deg);
+    }
+    40% {
+        top: 77.68%;
+        transform: translate(-50%, 77.68%) scale(0.65) rotate(-2.5deg);
+    }
+    45% {
+        top: 74.89%;
+        transform: translate(-50%, 74.89%) scale(0.65) rotate(-2.0deg);
+    }
+    50% {
+        top: 72.1%;
+        transform: translate(-50%, 72.1%) scale(0.65) rotate(-1.5deg);
+    }
+    55% {
+        top: 69.31%;
+        transform: translate(-50%, 69.31%) scale(0.65) rotate(-1.0deg);
+    }
+    60% {
+        top: 66.52%;
+        transform: translate(-50%, 66.52%) scale(0.65) rotate(-0.5deg);
+    }
+    65% {
+        top: 63.73%;
+        transform: translate(-50%, 63.73%) scale(0.65) rotate(0deg);
+    }
+    70% {
+        top: 60.94%;
+        transform: translate(-50%, 60.94%) scale(0.65) rotate(0.5deg);
+    }
+    75% {
+        top: 58.15%;
+        transform: translate(-50%, 58.15%) scale(0.65) rotate(1.0deg);
+    }
+    80% {
+        top: 55.36%;
+        transform: translate(-50%, 55.36%) scale(0.65) rotate(1.5deg);
+    }
+    85% {
+        top: 52.57%;
+        transform: translate(-50%, 52.57%) scale(0.65) rotate(2.0deg);
+    }
+    90% {
+        top: 49.78%;
+        transform: translate(-50%, 49.78%) scale(0.65) rotate(2.5deg);
+    }
+    95% {
+        top: 46.99%;
+        transform: translate(-50%, 46.99%) scale(0.65) rotate(3.0deg);
+    }
+    100% {
+        top: 44.2%;
+        transform: translate(-50%, 44.2%) scale(0.65) rotate(3.5deg);
+    }
+}
+@keyframes popupT72 {
+    0% {
+        top: 100%;
+        transform: translate(-50%, 100%) scale(0.65) rotate(-6.5deg);
+    }
+    5% {
+        top: 97.2%;
+        transform: translate(-50%, 97.2%) scale(0.65) rotate(-6.0deg);
+    }
+    10% {
+        top: 94.4%;
+        transform: translate(-50%, 94.4%) scale(0.65) rotate(-5.5deg);
+    }
+    15% {
+        top: 91.6%;
+        transform: translate(-50%, 91.6%) scale(0.65) rotate(-5.0deg);
+    }
+    20% {
+        top: 88.8%;
+        transform: translate(-50%, 88.8%) scale(0.65) rotate(-4.5deg);
+    }
+    25% {
+        top: 86.0%;
+        transform: translate(-50%, 86.0%) scale(0.65) rotate(-4.0deg);
+    }
+    30% {
+        top: 83.2%;
+        transform: translate(-50%, 83.2%) scale(0.65) rotate(-3.5deg);
+    }
+    35% {
+        top: 80.4%;
+        transform: translate(-50%, 80.4%) scale(0.65) rotate(-3.0deg);
+    }
+    40% {
+        top: 77.6%;
+        transform: translate(-50%, 77.6%) scale(0.65) rotate(-2.5deg);
+    }
+    45% {
+        top: 74.8%;
+        transform: translate(-50%, 74.8%) scale(0.65) rotate(-2.0deg);
+    }
+    50% {
+        top: 72.0%;
+        transform: translate(-50%, 72.0%) scale(0.65) rotate(-1.5deg);
+    }
+    55% {
+        top: 69.2%;
+        transform: translate(-50%, 69.2%) scale(0.65) rotate(-1.0deg);
+    }
+    60% {
+        top: 66.4%;
+        transform: translate(-50%, 66.4%) scale(0.65) rotate(-0.5deg);
+    }
+    65% {
+        top: 63.6%;
+        transform: translate(-50%, 63.6%) scale(0.65) rotate(0deg);
+    }
+    70% {
+        top: 60.8%;
+        transform: translate(-50%, 60.8%) scale(0.65) rotate(0.5deg);
+    }
+    75% {
+        top: 58.0%;
+        transform: translate(-50%, 58.0%) scale(0.65) rotate(1.0deg);
+    }
+    80% {
+        top: 55.2%;
+        transform: translate(-50%, 55.2%) scale(0.65) rotate(1.5deg);
+    }
+    85% {
+        top: 52.4%;
+        transform: translate(-50%, 52.4%) scale(0.65) rotate(2.0deg);
+    }
+    90% {
+        top: 49.6%;
+        transform: translate(-50%, 49.6%) scale(0.65) rotate(2.5deg);
+    }
+    95% {
+        top: 46.8%;
+        transform: translate(-50%, 46.8%) scale(0.65) rotate(3.0deg);
+    }
+    100% {
+        top: 44.0%;
+        transform: translate(-50%, 44.0%) scale(0.65) rotate(3.5deg);
+    }
+}
+@keyframes popupT81 {
+    0% {
+        top: 100%;
+        transform: translate(-50%, 100%) scale(0.65) rotate(-6.5deg);
+    }
+    5% {
+        top: 97.55%;
+        transform: translate(-50%, 97.55%) scale(0.65) rotate(-6.0deg);
+    }
+    10% {
+        top: 95.10%;
+        transform: translate(-50%, 95.10%) scale(0.65) rotate(-5.5deg);
+    }
+    15% {
+        top: 92.65%;
+        transform: translate(-50%, 92.65%) scale(0.65) rotate(-5.0deg);
+    }
+    20% {
+        top: 90.20%;
+        transform: translate(-50%, 90.20%) scale(0.65) rotate(-4.5deg);
+    }
+    25% {
+        top: 87.75%;
+        transform: translate(-50%, 87.75%) scale(0.65) rotate(-4.0deg);
+    }
+    30% {
+        top: 85.30%;
+        transform: translate(-50%, 85.30%) scale(0.65) rotate(-3.5deg);
+    }
+    35% {
+        top: 82.85%;
+        transform: translate(-50%, 82.85%) scale(0.65) rotate(-3.0deg);
+    }
+    40% {
+        top: 80.40%;
+        transform: translate(-50%, 80.40%) scale(0.65) rotate(-2.5deg);
+    }
+    45% {
+        top: 77.95%;
+        transform: translate(-50%, 77.95%) scale(0.65) rotate(-2.0deg);
+    }
+    50% {
+        top: 75.50%;
+        transform: translate(-50%, 75.50%) scale(0.65) rotate(-1.5deg);
+    }
+    55% {
+        top: 73.05%;
+        transform: translate(-50%, 73.05%) scale(0.65) rotate(-1.0deg);
+    }
+    60% {
+        top: 70.60%;
+        transform: translate(-50%, 70.60%) scale(0.65) rotate(-0.5deg);
+    }
+    65% {
+        top: 68.15%;
+        transform: translate(-50%, 68.15%) scale(0.65) rotate(0deg);
+    }
+    70% {
+        top: 65.70%;
+        transform: translate(-50%, 65.70%) scale(0.65) rotate(0.5deg);
+    }
+    75% {
+        top: 63.25%;
+        transform: translate(-50%, 63.25%) scale(0.65) rotate(1.0deg);
+    }
+    80% {
+        top: 60.80%;
+        transform: translate(-50%, 60.80%) scale(0.65) rotate(1.5deg);
+    }
+    85% {
+        top: 58.35%;
+        transform: translate(-50%, 58.35%) scale(0.65) rotate(2.0deg);
+    }
+    90% {
+        top: 55.90%;
+        transform: translate(-50%, 55.90%) scale(0.65) rotate(2.5deg);
+    }
+    95% {
+        top: 53.45%;
+        transform: translate(-50%, 53.45%) scale(0.65) rotate(3.0deg);
+    }
+    100% {
+        top: 51.00%;
+        transform: translate(-50%, 51.00%) scale(0.65) rotate(3.5deg);
+    }
+}
+@keyframes popupT82 {
+    0% {
+        top: 100%;
+        transform: translate(-50%, 100%) scale(0.65) rotate(-6.5deg);
+    }
+    5% {
+        top: 97.45%;
+        transform: translate(-50%, 97.45%) scale(0.65) rotate(-6.0deg);
+    }
+    10% {
+        top: 94.90%;
+        transform: translate(-50%, 94.90%) scale(0.65) rotate(-5.5deg);
+    }
+    15% {
+        top: 92.35%;
+        transform: translate(-50%, 92.35%) scale(0.65) rotate(-5.0deg);
+    }
+    20% {
+        top: 89.80%;
+        transform: translate(-50%, 89.80%) scale(0.65) rotate(-4.5deg);
+    }
+    25% {
+        top: 87.25%;
+        transform: translate(-50%, 87.25%) scale(0.65) rotate(-4.0deg);
+    }
+    30% {
+        top: 84.70%;
+        transform: translate(-50%, 84.70%) scale(0.65) rotate(-3.5deg);
+    }
+    35% {
+        top: 82.15%;
+        transform: translate(-50%, 82.15%) scale(0.65) rotate(-3.0deg);
+    }
+    40% {
+        top: 79.60%;
+        transform: translate(-50%, 79.60%) scale(0.65) rotate(-2.5deg);
+    }
+    45% {
+        top: 77.05%;
+        transform: translate(-50%, 77.05%) scale(0.65) rotate(-2.0deg);
+    }
+    50% {
+        top: 74.50%;
+        transform: translate(-50%, 74.50%) scale(0.65) rotate(-1.5deg);
+    }
+    55% {
+        top: 71.95%;
+        transform: translate(-50%, 71.95%) scale(0.65) rotate(-1.0deg);
+    }
+    60% {
+        top: 69.40%;
+        transform: translate(-50%, 69.40%) scale(0.65) rotate(-0.5deg);
+    }
+    65% {
+        top: 66.85%;
+        transform: translate(-50%, 66.85%) scale(0.65) rotate(0deg);
+    }
+    70% {
+        top: 64.30%;
+        transform: translate(-50%, 64.30%) scale(0.65) rotate(0.5deg);
+    }
+    75% {
+        top: 61.75%;
+        transform: translate(-50%, 61.75%) scale(0.65) rotate(1.0deg);
+    }
+    80% {
+        top: 59.20%;
+        transform: translate(-50%, 59.20%) scale(0.65) rotate(1.5deg);
+    }
+    85% {
+        top: 56.65%;
+        transform: translate(-50%, 56.65%) scale(0.65) rotate(2.0deg);
+    }
+    90% {
+        top: 54.10%;
+        transform: translate(-50%, 54.10%) scale(0.65) rotate(2.5deg);
+    }
+    95% {
+        top: 51.55%;
+        transform: translate(-50%, 51.55%) scale(0.65) rotate(3.0deg);
+    }
+    100% {
+        top: 49.00%;
+        transform: translate(-50%, 49.00%) scale(0.65) rotate(3.5deg);
+    }
+}
+@keyframes popupT91 {
+    0% {
+        top: 100%;
+        transform: translate(-50%, 100%) scale(0.65) rotate(-6.5deg);
+    }
+    5% {
+        top: 97.85%;
+        transform: translate(-50%, 97.85%) scale(0.65) rotate(-6.0deg);
+    }
+    10% {
+        top: 95.70%;
+        transform: translate(-50%, 95.70%) scale(0.65) rotate(-5.5deg);
+    }
+    15% {
+        top: 93.55%;
+        transform: translate(-50%, 93.55%) scale(0.65) rotate(-5.0deg);
+    }
+    20% {
+        top: 91.40%;
+        transform: translate(-50%, 91.40%) scale(0.65) rotate(-4.5deg);
+    }
+    25% {
+        top: 89.25%;
+        transform: translate(-50%, 89.25%) scale(0.65) rotate(-4.0deg);
+    }
+    30% {
+        top: 87.10%;
+        transform: translate(-50%, 87.10%) scale(0.65) rotate(-3.5deg);
+    }
+    35% {
+        top: 84.95%;
+        transform: translate(-50%, 84.95%) scale(0.65) rotate(-3.0deg);
+    }
+    40% {
+        top: 82.80%;
+        transform: translate(-50%, 82.80%) scale(0.65) rotate(-2.5deg);
+    }
+    45% {
+        top: 80.65%;
+        transform: translate(-50%, 80.65%) scale(0.65) rotate(-2.0deg);
+    }
+    50% {
+        top: 78.50%;
+        transform: translate(-50%, 78.50%) scale(0.65) rotate(-1.5deg);
+    }
+    55% {
+        top: 76.35%;
+        transform: translate(-50%, 76.35%) scale(0.65) rotate(-1.0deg);
+    }
+    60% {
+        top: 74.20%;
+        transform: translate(-50%, 74.20%) scale(0.65) rotate(-0.5deg);
+    }
+    65% {
+        top: 72.05%;
+        transform: translate(-50%, 72.05%) scale(0.65) rotate(0deg);
+    }
+    70% {
+        top: 69.90%;
+        transform: translate(-50%, 69.90%) scale(0.65) rotate(0.5deg);
+    }
+    75% {
+        top: 67.75%;
+        transform: translate(-50%, 67.75%) scale(0.65) rotate(1.0deg);
+    }
+    80% {
+        top: 65.60%;
+        transform: translate(-50%, 65.60%) scale(0.65) rotate(1.5deg);
+    }
+    85% {
+        top: 63.45%;
+        transform: translate(-50%, 63.45%) scale(0.65) rotate(2.0deg);
+    }
+    90% {
+        top: 61.30%;
+        transform: translate(-50%, 61.30%) scale(0.65) rotate(2.5deg);
+    }
+    95% {
+        top: 59.15%;
+        transform: translate(-50%, 59.15%) scale(0.65) rotate(3.0deg);
+    }
+    100% {
+        top: 57.00%;
+        transform: translate(-50%, 57.00%) scale(0.65) rotate(3.5deg);
+    }
+}
+@keyframes popupT821 {
+    0% {
+        top: 100%;
+        transform: translate(-50%, 100%) scale(0.65) rotate(-6.5deg);
+    }
+    5% {
+        top: 97.80%;
+        transform: translate(-50%, 97.80%) scale(0.65) rotate(-6.0deg);
+    }
+    10% {
+        top: 95.60%;
+        transform: translate(-50%, 95.60%) scale(0.65) rotate(-5.5deg);
+    }
+    15% {
+        top: 93.40%;
+        transform: translate(-50%, 93.40%) scale(0.65) rotate(-5.0deg);
+    }
+    20% {
+        top: 91.20%;
+        transform: translate(-50%, 91.20%) scale(0.65) rotate(-4.5deg);
+    }
+    25% {
+        top: 89.00%;
+        transform: translate(-50%, 89.00%) scale(0.65) rotate(-4.0deg);
+    }
+    30% {
+        top: 86.80%;
+        transform: translate(-50%, 86.80%) scale(0.65) rotate(-3.5deg);
+    }
+    35% {
+        top: 84.60%;
+        transform: translate(-50%, 84.60%) scale(0.65) rotate(-3.0deg);
+    }
+    40% {
+        top: 82.40%;
+        transform: translate(-50%, 82.40%) scale(0.65) rotate(-2.5deg);
+    }
+    45% {
+        top: 80.20%;
+        transform: translate(-50%, 80.20%) scale(0.65) rotate(-2.0deg);
+    }
+    50% {
+        top: 78.00%;
+        transform: translate(-50%, 78.00%) scale(0.65) rotate(-1.5deg);
+    }
+    55% {
+        top: 75.80%;
+        transform: translate(-50%, 75.80%) scale(0.65) rotate(-1.0deg);
+    }
+    60% {
+        top: 73.60%;
+        transform: translate(-50%, 73.60%) scale(0.65) rotate(-0.5deg);
+    }
+    65% {
+        top: 71.40%;
+        transform: translate(-50%, 71.40%) scale(0.65) rotate(0deg);
+    }
+    70% {
+        top: 69.20%;
+        transform: translate(-50%, 69.20%) scale(0.65) rotate(0.5deg);
+    }
+    75% {
+        top: 67.00%;
+        transform: translate(-50%, 67.00%) scale(0.65) rotate(1.0deg);
+    }
+    80% {
+        top: 64.80%;
+        transform: translate(-50%, 64.80%) scale(0.65) rotate(1.5deg);
+    }
+    85% {
+        top: 62.60%;
+        transform: translate(-50%, 62.60%) scale(0.65) rotate(2.0deg);
+    }
+    90% {
+        top: 60.40%;
+        transform: translate(-50%, 60.40%) scale(0.65) rotate(2.5deg);
+    }
+    95% {
+        top: 58.20%;
+        transform: translate(-50%, 58.20%) scale(0.65) rotate(3.0deg);
+    }
+    100% {
+        top: 56.00%;
+        transform: translate(-50%, 56.00%) scale(0.65) rotate(3.5deg);
+    }
+}
+@keyframes popupTFF {
+    0% {
+        top: 100%;
+        transform: translate(-50%, 100%) scale(1.5);
+        opacity: 0; /* Fully transparent */
+    }
+    5% {
+        top: 98.125%;
+        transform: translate(-50%, 98.125%) scale(1.45);
+        opacity: 0.05; /* Slightly visible */
+    }
+    10% {
+        top: 96.25%;
+        transform: translate(-50%, 96.25%) scale(1.40);
+        opacity: 0.10; /* More visible */
+    }
+    15% {
+        top: 94.375%;
+        transform: translate(-50%, 94.375%) scale(1.35);
+        opacity: 0.15; /* More visible */
+    }
+    20% {
+        top: 92.5%;
+        transform: translate(-50%, 92.5%) scale(1.30);
+        opacity: 0.20; /* More visible */
+    }
+    25% {
+        top: 90.625%;
+        transform: translate(-50%, 90.625%) scale(1.25);
+        opacity: 0.25; /* More visible */
+    }
+    30% {
+        top: 88.75%;
+        transform: translate(-50%, 88.75%) scale(1.20);
+        opacity: 0.30; /* More visible */
+    }
+    35% {
+        top: 86.875%;
+        transform: translate(-50%, 86.875%) scale(1.15);
+        opacity: 0.35; /* More visible */
+    }
+    40% {
+        top: 85%;
+        transform: translate(-50%, 85%) scale(1.10);
+        opacity: 0.40; /* Almost fully visible */
+    }
+    45% {
+        top: 83.125%;
+        transform: translate(-50%, 83.125%) scale(1.05);
+        opacity: 0.45; /* Almost fully visible */
+    }
+    50% {
+        top: 81.25%;
+        transform: translate(-50%, 81.25%) scale(1.00);
+        opacity: 0.50; /* Half visible */
+    }
+    55% {
+        top: 79.375%;
+        transform: translate(-50%, 79.375%) scale(0.95);
+        opacity: 0.55; /* More visible */
+    }
+    60% {
+        top: 77.5%;
+        transform: translate(-50%, 77.5%) scale(0.90);
+        opacity: 0.60; /* More visible */
+    }
+    65% {
+        top: 75.625%;
+        transform: translate(-50%, 75.625%) scale(0.85);
+        opacity: 0.65; /* More visible */
+    }
+    70% {
+        top: 73.75%;
+        transform: translate(-50%, 73.75%) scale(0.80);
+        opacity: 0.70; /* More visible */
+    }
+    75% {
+        top: 71.875%;
+        transform: translate(-50%, 71.875%) scale(0.75);
+        opacity: 0.75; /* More visible */
+    }
+    80% {
+        top: 70%;
+        transform: translate(-50%, 70%) scale(0.70);
+        opacity: 0.80; /* More visible */
+    }
+    85% {
+        top: 68.125%;
+        transform: translate(-50%, 68.125%) scale(0.65);
+        opacity: 0.85; /* More visible */
+    }
+    90% {
+        top: 66.25%;
+        transform: translate(-50%, 66.25%) scale(0.60);
+        opacity: 0.90; /* More visible */
+    }
+    95% {
+        top: 64.375%;
+        transform: translate(-50%, 64.375%) scale(0.55);
+        opacity: 0.95; /* Almost fully visible */
+    }
+    100% {
+        top: 62.5%;
+        transform: translate(-50%, 62.5%) scale(0.8);
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes popupTFF11 {
+    0% {
+        top: 100%;
+        transform: translate(-50%, 100%) scale(1.5) rotate(0deg);
+        opacity: 0; /* Fully transparent */
+    }
+    5% {
+        top: 99.2125%;
+        transform: translate(-50%, 99.2125%) scale(1.47) rotate(0deg);
+        opacity: 0.05; /* Slightly visible */
+    }
+    10% {
+        top: 98.425%;
+        transform: translate(-50%, 98.425%) scale(1.44) rotate(0deg);
+        opacity: 0.10; /* More visible */
+    }
+    15% {
+        top: 97.6375%;
+        transform: translate(-50%, 97.6375%) scale(1.41) rotate(0deg);
+        opacity: 0.15; /* More visible */
+    }
+    20% {
+        top: 96.85%;
+        transform: translate(-50%, 96.85%) scale(1.38) rotate(0deg);
+        opacity: 0.20; /* More visible */
+    }
+    25% {
+        top: 96.0625%;
+        transform: translate(-50%, 96.0625%) scale(1.35) rotate(0deg);
+        opacity: 0.25; /* More visible */
+    }
+    30% {
+        top: 95.275%;
+        transform: translate(-50%, 95.275%) scale(1.32) rotate(0deg);
+        opacity: 0.30; /* More visible */
+    }
+    35% {
+        top: 94.4875%;
+        transform: translate(-50%, 94.4875%) scale(1.29) rotate(0deg);
+        opacity: 0.35; /* More visible */
+    }
+    40% {
+        top: 93.7%;
+        transform: translate(-50%, 93.7%) scale(1.26) rotate(0deg);
+        opacity: 0.40; /* More visible */
+    }
+    45% {
+        top: 92.9125%;
+        transform: translate(-50%, 92.9125%) scale(1.23) rotate(0deg);
+        opacity: 0.45; /* More visible */
+    }
+    50% {
+        top: 92.125%;
+        transform: translate(-50%, 92.125%) scale(1.20) rotate(0deg);
+        opacity: 0.50; /* More visible */
+    }
+    55% {
+        top: 91.3375%;
+        transform: translate(-50%, 91.3375%) scale(1.17) rotate(0deg);
+        opacity: 0.55; /* More visible */
+    }
+    60% {
+        top: 90.55%;
+        transform: translate(-50%, 90.55%) scale(1.14) rotate(0deg);
+        opacity: 0.60; /* More visible */
+    }
+    65% {
+        top: 89.7625%;
+        transform: translate(-50%, 89.7625%) scale(1.11) rotate(0deg);
+        opacity: 0.65; /* More visible */
+    }
+    70% {
+        top: 88.975%;
+        transform: translate(-50%, 88.975%) scale(1.08) rotate(0deg);
+        opacity: 0.70; /* More visible */
+    }
+    75% {
+        top: 88.1875%;
+        transform: translate(-50%, 88.1875%) scale(1.05) rotate(0deg);
+        opacity: 0.75; /* More visible */
+    }
+    80% {
+        top: 87.4%;
+        transform: translate(-50%, 87.4%) scale(1.02) rotate(0deg);
+        opacity: 0.80; /* More visible */
+    }
+    85% {
+        top: 86.6125%;
+        transform: translate(-50%, 86.6125%) scale(0.99) rotate(0deg);
+        opacity: 0.85; /* More visible */
+    }
+    90% {
+        top: 85.825%;
+        transform: translate(-50%, 85.825%) scale(0.96) rotate(0deg);
+        opacity: 0.90; /* More visible */
+    }
+    95% {
+        top: 85.0375%;
+        transform: translate(-50%, 85.0375%) scale(0.93) rotate(0deg);
+        opacity: 0.95; /* Almost fully visible */
+    }
+    100% {
+        top: 68.5%;
+        transform: translate(-50%, 68.5%) scale(0.8) rotate(0deg);
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes popupTFF12 {
+    0% {
+        top: 100%;
+        transform: translate(-50%, 100%) scale(1.5) rotate(0deg);
+        opacity: 0; /* Fully transparent */
+    }
+    5% {
+        top: 99.2425%;
+        transform: translate(-50%, 99.2425%) scale(1.435) rotate(0.25deg);
+        opacity: 0.05; /* Slightly visible */
+    }
+    10% {
+        top: 98.485%;
+        transform: translate(-50%, 98.485%) scale(1.37) rotate(0.5deg);
+        opacity: 0.10; /* More visible */
+    }
+    15% {
+        top: 97.7275%;
+        transform: translate(-50%, 97.7275%) scale(1.305) rotate(0.75deg);
+        opacity: 0.15; /* More visible */
+    }
+    20% {
+        top: 96.97%;
+        transform: translate(-50%, 96.97%) scale(1.24) rotate(1deg);
+        opacity: 0.20; /* More visible */
+    }
+    25% {
+        top: 96.2125%;
+        transform: translate(-50%, 96.2125%) scale(1.175) rotate(1.25deg);
+        opacity: 0.25; /* More visible */
+    }
+    30% {
+        top: 95.455%;
+        transform: translate(-50%, 95.455%) scale(1.11) rotate(1.5deg);
+        opacity: 0.30; /* More visible */
+    }
+    35% {
+        top: 94.6975%;
+        transform: translate(-50%, 94.6975%) scale(1.045) rotate(1.75deg);
+        opacity: 0.35; /* More visible */
+    }
+    40% {
+        top: 93.94%;
+        transform: translate(-50%, 93.94%) scale(0.98) rotate(2deg);
+        opacity: 0.40; /* More visible */
+    }
+    45% {
+        top: 93.1825%;
+        transform: translate(-50%, 93.1825%) scale(0.915) rotate(2.25deg);
+        opacity: 0.45; /* More visible */
+    }
+    50% {
+        top: 92.425%;
+        transform: translate(-50%, 92.425%) scale(0.85) rotate(2.5deg);
+        opacity: 0.50; /* More visible */
+    }
+    55% {
+        top: 91.6675%;
+        transform: translate(-50%, 91.6675%) scale(0.785) rotate(2.75deg);
+        opacity: 0.55; /* More visible */
+    }
+    60% {
+        top: 90.91%;
+        transform: translate(-50%, 90.91%) scale(0.72) rotate(3deg);
+        opacity: 0.60; /* More visible */
+    }
+    65% {
+        top: 90.1525%;
+        transform: translate(-50%, 90.1525%) scale(0.655) rotate(3.25deg);
+        opacity: 0.65; /* More visible */
+    }
+    70% {
+        top: 89.395%;
+        transform: translate(-50%, 89.395%) scale(0.59) rotate(3.5deg);
+        opacity: 0.70; /* More visible */
+    }
+    75% {
+        top: 88.6375%;
+        transform: translate(-50%, 88.6375%) scale(0.525) rotate(3.75deg);
+        opacity: 0.75; /* More visible */
+    }
+    80% {
+        top: 87.88%;
+        transform: translate(-50%, 87.88%) scale(0.46) rotate(4deg);
+        opacity: 0.80; /* More visible */
+    }
+    85% {
+        top: 87.1225%;
+        transform: translate(-50%, 87.1225%) scale(0.395) rotate(4.25deg);
+        opacity: 0.85; /* More visible */
+    }
+    90% {
+        top: 86.365%;
+        transform: translate(-50%, 86.365%) scale(0.33) rotate(4.5deg);
+        opacity: 0.90; /* More visible */
+    }
+    95% {
+        top: 85.6075%;
+        transform: translate(-50%, 85.6075%) scale(0.265) rotate(4.75deg);
+        opacity: 0.95; /* More visible */
+    }
+    100% {
+        top: 69.7%;
+        transform: translate(-50%, 69.7%) scale(0.8) rotate(5deg);
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes popupTFF21 {
+    0% {
+        top: 100%;
+        transform: translate(-50%, 100%) scale(1.5) rotate(0deg);
+        opacity: 0; /* Fully transparent */
+    }
+    5% {
+        top: 98.775%;
+        transform: translate(-50%, 98.775%) scale(1.45) rotate(0.1deg);
+        opacity: 0.05; /* Slightly visible */
+    }
+    10% {
+        top: 97.55%;
+        transform: translate(-50%, 97.55%) scale(1.4) rotate(0.2deg);
+        opacity: 0.10; /* More visible */
+    }
+    15% {
+        top: 96.325%;
+        transform: translate(-50%, 96.325%) scale(1.35) rotate(0.3deg);
+        opacity: 0.15; /* More visible */
+    }
+    20% {
+        top: 95.1%;
+        transform: translate(-50%, 95.1%) scale(1.3) rotate(0.4deg);
+        opacity: 0.20; /* More visible */
+    }
+    25% {
+        top: 93.875%;
+        transform: translate(-50%, 93.875%) scale(1.25) rotate(0.5deg);
+        opacity: 0.25; /* More visible */
+    }
+    30% {
+        top: 92.65%;
+        transform: translate(-50%, 92.65%) scale(1.2) rotate(0.6deg);
+        opacity: 0.30; /* More visible */
+    }
+    35% {
+        top: 91.425%;
+        transform: translate(-50%, 91.425%) scale(1.15) rotate(0.7deg);
+        opacity: 0.35; /* More visible */
+    }
+    40% {
+        top: 90.2%;
+        transform: translate(-50%, 90.2%) scale(1.1) rotate(0.8deg);
+        opacity: 0.40; /* More visible */
+    }
+    45% {
+        top: 88.975%;
+        transform: translate(-50%, 88.975%) scale(1.05) rotate(0.9deg);
+        opacity: 0.45; /* More visible */
+    }
+    50% {
+        top: 87.75%;
+        transform: translate(-50%, 87.75%) scale(1) rotate(1deg);
+        opacity: 0.50; /* More visible */
+    }
+    55% {
+        top: 86.525%;
+        transform: translate(-50%, 86.525%) scale(0.95) rotate(1.1deg);
+        opacity: 0.55; /* More visible */
+    }
+    60% {
+        top: 85.3%;
+        transform: translate(-50%, 85.3%) scale(0.9) rotate(1.2deg);
+        opacity: 0.60; /* More visible */
+    }
+    65% {
+        top: 84.075%;
+        transform: translate(-50%, 84.075%) scale(0.85) rotate(1.3deg);
+        opacity: 0.65; /* More visible */
+    }
+    70% {
+        top: 82.85%;
+        transform: translate(-50%, 82.85%) scale(0.8) rotate(1.4deg);
+        opacity: 0.70; /* More visible */
+    }
+    75% {
+        top: 81.625%;
+        transform: translate(-50%, 81.625%) scale(0.75) rotate(1.5deg);
+        opacity: 0.75; /* More visible */
+    }
+    80% {
+        top: 80.4%;
+        transform: translate(-50%, 80.4%) scale(0.7) rotate(1.6deg);
+        opacity: 0.80; /* More visible */
+    }
+    85% {
+        top: 79.175%;
+        transform: translate(-50%, 79.175%) scale(0.65) rotate(1.7deg);
+        opacity: 0.85; /* More visible */
+    }
+    90% {
+        top: 77.95%;
+        transform: translate(-50%, 77.95%) scale(0.6) rotate(1.8deg);
+        opacity: 0.90; /* More visible */
+    }
+    95% {
+        top: 76.725%;
+        transform: translate(-50%, 76.725%) scale(0.55) rotate(1.9deg);
+        opacity: 0.95; /* Almost fully visible */
+    }
+    100% {
+        top: 75.5%;
+        transform: translate(-50%, 75.5%) scale(0.8) rotate(2deg);
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes popupTFF22 {
+    0% {
+        top: 100%;
+        transform: translate(-50%, 100%) scale(1.5) rotate(0deg);
+        opacity: 0; /* Fully transparent */
+    }
+    5% {
+        top: 98.78%;
+        transform: translate(-50%, 98.78%) scale(1.45) rotate(-0.25deg);
+        opacity: 0.05; /* Slightly visible */
+    }
+    10% {
+        top: 97.56%;
+        transform: translate(-50%, 97.56%) scale(1.4) rotate(-0.5deg);
+        opacity: 0.10; /* More visible */
+    }
+    15% {
+        top: 96.34%;
+        transform: translate(-50%, 96.34%) scale(1.35) rotate(-0.75deg);
+        opacity: 0.15; /* More visible */
+    }
+    20% {
+        top: 95.12%;
+        transform: translate(-50%, 95.12%) scale(1.3) rotate(-1deg);
+        opacity: 0.20; /* More visible */
+    }
+    25% {
+        top: 93.9%;
+        transform: translate(-50%, 93.9%) scale(1.25) rotate(-1.25deg);
+        opacity: 0.25; /* More visible */
+    }
+    30% {
+        top: 92.68%;
+        transform: translate(-50%, 92.68%) scale(1.2) rotate(-1.5deg);
+        opacity: 0.30; /* More visible */
+    }
+    35% {
+        top: 91.46%;
+        transform: translate(-50%, 91.46%) scale(1.15) rotate(-1.75deg);
+        opacity: 0.35; /* More visible */
+    }
+    40% {
+        top: 90.24%;
+        transform: translate(-50%, 90.24%) scale(1.1) rotate(-2deg);
+        opacity: 0.40; /* More visible */
+    }
+    45% {
+        top: 89.02%;
+        transform: translate(-50%, 89.02%) scale(1.05) rotate(-2.25deg);
+        opacity: 0.45; /* More visible */
+    }
+    50% {
+        top: 87.8%;
+        transform: translate(-50%, 87.8%) scale(1) rotate(-2.5deg);
+        opacity: 0.50; /* More visible */
+    }
+    55% {
+        top: 86.58%;
+        transform: translate(-50%, 86.58%) scale(0.95) rotate(-2.75deg);
+        opacity: 0.55; /* More visible */
+    }
+    60% {
+        top: 85.36%;
+        transform: translate(-50%, 85.36%) scale(0.9) rotate(-3deg);
+        opacity: 0.60; /* More visible */
+    }
+    65% {
+        top: 84.14%;
+        transform: translate(-50%, 84.14%) scale(0.85) rotate(-3.25deg);
+        opacity: 0.65; /* More visible */
+    }
+    70% {
+        top: 82.92%;
+        transform: translate(-50%, 82.92%) scale(0.8) rotate(-3.5deg);
+        opacity: 0.70; /* More visible */
+    }
+    75% {
+        top: 81.7%;
+        transform: translate(-50%, 81.7%) scale(0.75) rotate(-3.75deg);
+        opacity: 0.75; /* More visible */
+    }
+    80% {
+        top: 80.48%;
+        transform: translate(-50%, 80.48%) scale(0.7) rotate(-4deg);
+        opacity: 0.80; /* More visible */
+    }
+    85% {
+        top: 79.26%;
+        transform: translate(-50%, 79.26%) scale(0.65) rotate(-4.25deg);
+        opacity: 0.85; /* More visible */
+    }
+    90% {
+        top: 78.04%;
+        transform: translate(-50%, 78.04%) scale(0.6) rotate(-4.5deg);
+        opacity: 0.90; /* More visible */
+    }
+    95% {
+        top: 76.82%;
+        transform: translate(-50%, 76.82%) scale(0.55) rotate(-4.75deg);
+        opacity: 0.95; /* Almost fully visible */
+    }
+    100% {
+        top: 75.7%;
+        transform: translate(-50%, 75.7%) scale(0.8) rotate(-5deg);
+        opacity: 1; /* Fully visible */
+    }
+}
+
+
+.testimonial-imageT11-overlay.start-animation {
+    position: absolute;
+    top: 6.35%; /* Final position */
+    left: 23%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.65); /* Center the image horizontally and scale */
+    z-index: 2; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT11 2s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT11-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+
+.testimonial-imageT12-overlay.start-animation {
+    position: absolute;
+    top: 6.3%; /* Final position */
+    left: 36.2%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.67) rotate(-9deg); /* Center the image horizontally and scale */
+    z-index: 4; /* Ensure the image is above the text and video */
+    opacity: 12;
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT12 2.2s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with bounce effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT12-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+
+.testimonial-imageT13-overlay.start-animation {
+    position: absolute;
+    top: 6%; /* Final position */
+    left: 59%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.7); /* Center the image horizontally and scale */
+    z-index: 4; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT12 2.4s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with bounce effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT13-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+
+.testimonial-imageT14-overlay.start-animation {
+    position: absolute;
+    top: 7%; /* Final position */
+    left: 77.7%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.65) rotate(8deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 5; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT14 2.5s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT14-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+
+
+.testimonial-imageT131-overlay.start-animation {
+    position: absolute;
+    top: 10%; /* Final position */
+    left: 56%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.65); /* Center the image horizontally, scale */
+    z-index: 4; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT131 2.7s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT131-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageT21-overlay.start-animation {
+    position: absolute;
+    top: 11%; /* Final position */
+    left: 30.7%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.65) rotate(4deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 3; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT21 2.8s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT21-overlay.start-animationimg {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageT22-overlay.start-animation {
+    position: absolute;
+    top: 13.5%; /* Final position */
+    left: 57%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.75); /* Center the image horizontally, scale */
+    z-index: 4; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT22 2.9s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT22-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageT31-overlay.start-animation {
+    position: absolute;
+    top: 16.8%; /* Final position */
+    left: 30.7%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.65) rotate(-4deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 3; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT31 3.0s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT31-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageT32-overlay.start-animation {
+    position: absolute;
+    top: 18%; /* Final position */
+    left: 60.6%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.85) rotate(5deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 4; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT32 3.1s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT32-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageT41-overlay.start-animation {
+    position: absolute;
+    top: 22.2%; /* Final position */
+    left: 32.7%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.65) rotate(4deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 3;
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT41 3.2s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT41-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageT42-overlay.start-animation {
+    position: absolute;
+    top: 22.7%; /* Final position */
+    left: 67.4%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.85) rotate(-5deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 3; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT42 3.4s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT42-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageT51-overlay.start-animation {
+    position: absolute;
+    top: 27%; /* Final position */
+    left: 34.7%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.65) rotate(-6.5deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 3; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT41 3.6s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT51-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+    z-index: 5; /* Ensure the image is above the text and video */
+}
+.testimonial-imageT52-overlay.start-animation{
+    position: absolute;
+    top: 28%; /* Final position */
+    left: 62.8%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.85) rotate(6.5deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 4; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT52 3.8s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT52-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+
+.testimonial-imageT511-overlay.start-animation {
+    position: absolute;
+    top: 32%; /* Final position */
+    left: 52%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.85) rotate(0deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 4; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT511 3.9s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT511-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageT61-overlay.start-animation {
+    position: absolute;
+    top: 38%; /* Final position */
+    left: 38%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.7) rotate(5deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 4; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT61 4.3s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT61-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageT62-overlay.start-animation {
+    position: absolute;
+    top: 39%; /* Final position */
+    left: 76%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(1.2) rotate(3deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 7; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT62 4.5s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT62-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageT71-overlay.start-animation {
+    position: absolute;
+    top: 44.8%; /* Final position */
+    left: 38%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.7) rotate(-4deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 2; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT71 4.7s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT71-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageT72-overlay.start-animation {
+    position: absolute;
+    top: 44%; /* Final position */
+    left: 75.5%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(1.2) rotate(6deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 2; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT72 5.1s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT72-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageT81-overlay.start-animation {
+    position: absolute;
+    top: 51%; /* Final position */
+    left: 38%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.7) rotate(0deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 7; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT81 5.3s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT81-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageT82-overlay.start-animation {
+    position: absolute;
+    top: 49%; /* Final position */
+    left: 75.5%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(1.4) rotate(-5deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 6; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT82 5.5s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT82-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageT91-overlay.start-animation {
+    position: absolute;
+    top: 57%; /* Final position */
+    left: 38%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.7) rotate(-3deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 7; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT81 5.7s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT91-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageT821-overlay.start-animation {
+    position: absolute;
+    top: 56%; /* Final position */
+    left: 68.5%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.7) rotate(5deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 7; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupT821 5.9s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageT821-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+
+.testimonial-imageTFF-overlay.start-animation {
+    position: absolute;
+    top: 62.5%; /* Final position */
+    left: 50%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.8) rotate(0deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 9; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupTFF 6.1s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageTFF-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageTFF11-overlay.start-animation {
+    position: absolute;
+    top: 68.5%; /* Final position */
+    left: 30%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.8) rotate(0deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 7; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupTFF11 6.3s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageTFF11-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageTFF12-overlay.start-animation {
+    position: absolute;
+    top: 69.7%; /* Final position */
+    left: 55%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.8) rotate(5deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 7; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupTFF12 6.5s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageTFF12-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageTFF21-overlay.start-animation {
+    position: absolute;
+    top: 75.5%; /* Final position */
+    left: 30%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.8) rotate(2deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 7; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupTFF21 6.7s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageTFF21-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-imageTFF22-overlay.start-animation {
+    position: absolute;
+    top: 75.7%; /* Final position */
+    left: 55%; /* Horizontal position */
+    transform: translate(-50%, -50%) scale(0.8) rotate(-5deg); /* Center the image horizontally, scale, and rotate */
+    z-index: 7; /* Ensure the image is above the text and video */
+    max-width: 100%; /* Ensure the container does not overflow */
+    max-height: 100%; /* Ensure the container does not overflow */
+    animation: popupTFF22 6.9s cubic-bezier(0.42, 0, 0.58, 1); /* Apply animation with custom easing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with 50% opacity */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-imageTFF22-overlay.start-animation img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without distortion */
+}
+.testimonial-wave-overlay {
+    position: absolute; /* Allows overlay positioning */
+    top: 47%; /* Adjust as needed */
+    left: -200%; /* Adjust as needed */
+    width: 500%; /* Width of the container */
+    height: 100%; /* Full height of the container */
+    z-index: 5; /* Position below other elements if needed */
+    overflow: hidden; /* Hide any overflow */
+    transform: scale(0.2); /* Reduce scale to 30% */
+}
+
+/* Style for the image inside the testimonial overlay */
+.testimonial-wave-overlay img {
+    width: 100%; /* Scale image to fit container width */
+    height: 100%; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure image covers container without distortion */
+    display: block; /* Remove default margin/padding */
+}
+/* Dollar Image Container */
+.dollar-image-container {
+    position: fixed; /* Fixed position to stay in view */
+    top: 50%; /* Center vertically */
+    right: 10px; /* Distance from the right */
+    display: flex;
+    align-items: center;
+    transform: translateY(-50%); /* Offset to center vertically */
+    z-index: 50; /* Adjust if needed to ensure it's on top */
+}
+
+/* Dollar Image */
+.dollar-image {
+    width: 50px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between image and amount */
+    transform: translateX(30%); 
+}
+
+/* Dollar Amount Display */
+#dollar-amount {
+    font-size: 24px; /* Adjust size as needed */
+    font-family: 'Chelsea Market', cursive; /* Use Chelsea Market font */
+    color: gold; /* Gold color */
+    font-weight: bold; /* Make font bold for better visibility */
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.7), /* Tiny black border */
+                 0 0 8px rgba(255, 215, 0, 0.8); /* Glowing gold effect */
+}
+
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .dollar-image-container {
+        right: 5px; /* Adjust distance from the right for smaller screens */
+    }
+
+    .dollar-image {
+        width: 40px; /* Smaller image size for mobile */
+        margin-right: 5px; /* Less space between image and amount */
+        transform: translateX(0); /* Remove transform for better alignment */
+    }
+
+    #dollar-amount {
+        font-size: 20px; /* Slightly smaller font size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .dollar-image-container {
+        right: 5px; /* Further adjust distance from the right for very small screens */
+    }
+
+    .dollar-image {
+        width: 30px; /* Even smaller image size for very small screens */
+    }
+
+    #dollar-amount {
+        font-size: 18px; /* Smaller font size for very small screens */
+    }
+}
+
+/* Footer styles */
+footer {
+    padding: 16px; /* Reduced padding by 20% */
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    color: white; /* Ensure text is visible over the video */
+}
+
+/* Video container */
+.footer-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* Place it behind the footer content */
+}
+
+/* Video element */
+.footer-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure video stays behind everything */
+}
+
+/* CSS for the main section */
+.background123-image {
+    background-image: url('images/without-logo11.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: relative; /* Make sure the QR code is positioned relative to the main section */
+}
+
+/* CSS for the QR code with increased scale */
+.qr-code {
+    position: absolute;
+    top: -10%;
+    right: 70%;
+    width: 500px; /* 100px * 5 */
+    height: 500px; /* 100px * 5 */
+    transform: translate(50%, 50%); /* Center the QR code */
+}
+
+/* CSS for the contact text */
+.contact-text {
+    position: absolute;
+    top: 85%; /* Move the text slightly down */
+    right: 70%;
+    transform: translate(50%, -50%);
+    font-size: 48px; /* Increased font size */
+    font-family: 'Pacifico', cursive;
+    color: white; /* Text color */
+    text-align: center;
+    word-spacing: 20px; /* Increase the space between words */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000; /* Tiny black border using text-shadow */
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .qr-code {
+        width: 400px; /* Adjust size for large screens */
+        height: 400px;
+    }
+    .contact-text {
+        font-size: 36px; /* Adjust font size for large screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .qr-code {
+        width: 300px; /* Adjust size for medium screens */
+        height: 300px;
+    }
+    .contact-text {
+        font-size: 30px; /* Adjust font size for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .qr-code {
+        width: 200px; /* Adjust size for small screens */
+        height: 200px;
+        top: 0; /* Adjust position for small screens */
+    }
+    .contact-text {
+        font-size: 24px;
+        top: 72%; /* Adjust font size for small screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .qr-code {
+        width: 150px; /* Adjust size for extra small screens */
+        height: 150px;
+        top: 0; /* Adjust position for extra small screens */
+        right: 50%;
+        transform: translate(50%, 0); /* Adjust centering */
+    }
+    .contact-text {
+        font-size: 20px; /* Adjust font size for extra small screens */
+        top: 90%; /* Adjust position for extra small screens */
+    }
+}
+.rmeiz-logo {
+    /* Existing styles */
+    position: absolute;
+    bottom: -80%;
+    right: -45%;
+    
+    /* Scale down by 50% */
+    transform: scale(0.2);
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+    .rmeiz-logo {
+        /* Move the logo 55% down from the top */
+        top: -200%;
+        bottom: auto; /* Reset the bottom value */
+        right: -100%; /* Adjust position as necessary */
+        transform: scale(0.1);
+    }
+}
